@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="clay">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access management for property managers · Tyler Pruyn</title>
+<meta name="description" content="Permission groups and access management at ButterflyMX: a people-and-doors model that shipped to 100% of the fleet and let the platform scale past the intercom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../clay.css">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="../index.html">Tyler Pruyn</a>
+    <span class="links">
+      <a href="../index.html" class="active">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../art.html">Art</a>
+      <a href="../assets/TP_Resume_2026.pdf">Resume</a>
+    </span>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <div class="kicker">ButterflyMX · Product Designer</div>
+    <h1>Managing access for property managers</h1>
+    <p class="lede">ButterflyMX began as a smart video intercom at the front door. As the company expanded into keypads, smart locks, elevator controls, and key lockers, buildings needed a flexible way to decide who gets into which spaces, and when. I designed the permission groups system that made it possible, and it shipped to 100% of the fleet.</p>
+    <div class="cs-meta">
+      <div><b>Role</b>Product Designer: research, user flows, IA, UI, usability testing</div>
+      <div><b>Team</b>One PM, SMEs across Technical Project, Installation, and Client Success, one shared front-end developer</div>
+      <div><b>Timeline</b>Multi-month research and design, shipped fleet-wide</div>
+      <div><b>Platform</b>B2B web, property manager dashboard</div>
+    </div>
+  </div>
+</header>
+
+<main class="cs-body wrap">
+  <h2>Outcomes first</h2>
+  <div class="outcomes" style="width:min(960px,100%)">
+    <div class="outcome"><b>6,529</b><span>buildings (100% of the fleet) live with permission groups at launch</span></div>
+    <div class="outcome"><b>76%</b><span>of multi-zone properties created added access groups</span></div>
+    <div class="outcome"><b>95%</b><span>task-completion rate in usability testing</span></div>
+    <div class="outcome"><b>100%</b><span>of tested property managers preferred it to their current tool</span></div>
+  </div>
+  <p>Permission groups became the layer that let ButterflyMX grow past the intercom. Once access was modeled around people, doors, and time, the platform had a coherent place to add every new device that followed.</p>
+
+  <h2>Context</h2>
+  <p>ButterflyMX's operating system was built around one job: getting people through the front door with a smart video intercom. The roadmap, though, was to control far more of the building, additional doors, amenities, elevators, and back-of-house spaces. That meant the system needed a real model for access: who can go where, and when.</p>
+
+  <h2>The problem</h2>
+  <p>Access was managed by "zones." Zones were created to separate access at the building or location level, so a property with two intercoms for two buildings kept each building's residents to their own door. But most properties had a single zone, and a zone couldn't describe anything finer than the whole building. There was no way to control individual areas inside a property, and no way to set permissions at the level of a person or a role. We needed property managers to be able to give the right people access to the right areas at the right times.</p>
+
+  <h2>My role and the ground truth</h2>
+  <p>This was my first project with our sole product manager, and a chance to be the new person and learn the access-control space from the ground up. I worked with our Technical Project and Installation teams to understand how zones were actually wired in the field, and with Client Success to understand how property managers thought about access and where the current setup hurt. That grounding gave us the user stories to design against.</p>
+
+  <h3>Competitive analysis</h3>
+  <p>New to proptech, I studied how Latch, PDK, and Kisi handled access control. A clear pattern emerged: permission groups were organized around the role or type of person tied to the building, residents, security, maintenance, and service providers like delivery and internet techs. Each group was essentially a set of doors, a set of time constraints, and the people assigned to it. That shape informed the flows we built.</p>
+
+  <h2>User stories and flows</h2>
+  <p>A handful of concrete stories kept the work honest:</p>
+  <ul>
+    <li>As a tenant, I want to use my phone to access the roof, so I have the same convenience there that I have at the front door.</li>
+    <li>As a property manager, I want to restrict tenants' roof access after 11 PM and before 6 AM.</li>
+    <li>As a property manager, I want my cleaning and maintenance staff to have roof access at all times.</li>
+    <li>As a property manager, I want to let paying tenants into the gym while denying access to others.</li>
+  </ul>
+  <figure class="wide"><img src="../assets/access-management/workflows.jpg" alt="End-to-end user flows for creating and managing permission groups"><figcaption>The end-to-end flows for creating and managing permission groups, from a single default group to differentiated access by role, door, and time.</figcaption></figure>
+
+  <h2>Two directions, one A/B test</h2>
+  <p>We took two design directions for the permission groups page into an A/B test: a matrix that mapped every group against every door, and a more traditional table. The matrix was dense and visual; the table was simpler and more scannable.</p>
+  <figure class="wide"><img src="../assets/access-management/screen-1.webp" alt="Matrix interface mapping access groups against each door with time-window indicators"><figcaption>Direction A: a matrix mapping each access group to every door, with indicators for time-limited access.</figcaption></figure>
+  <figure class="wide"><img src="../assets/access-management/screen-2.webp" alt="Table interface listing each access group with its doors, people, and history"><figcaption>Direction B: a traditional table listing each group with its doors, people, and history.</figcaption></figure>
+  <p>After watching property managers work through both, we chose the table. It was less confusing and let us show more information at a glance.</p>
+
+  <h2>Testing it with property managers</h2>
+  <p>We wrote a usability plan and ran it through UserZoom with property managers, screened with qualifying questions and a pre-survey about their buildings and responsibilities. Across 10 participants and 8 tasks, the completion rate was 95%, at an average of about 14 minutes. The tasks covered the real work: creating a group, adding people and doors to new and existing groups, and setting a time range for a door.</p>
+  <p class="pull">"This experience is far better than the one I currently use. It is logical, intuitive, organized, and clean. My current platform is slow, awkward, and archaic."</p>
+  <p>Property managers expected to group access by role, and they valued having one centralized place to manage doors and the people who could open them. Every participant finished the flow, and 100% said the experience beat their current tool.</p>
+  <p>The testing also showed where the model leaked. People expected checkboxes to be interactive for adding users, wanted a separate view of who had already been added, reached for search to find people, and tripped over some of our taxonomy and icons. Those became the next round of fixes.</p>
+
+  <h2>What shipped</h2>
+  <p>The final design centered on a clear groups list and an edit panel where a manager builds a group from three things: the doors it covers, the time window for each, and the people in it. Stage, status, and access all read from one place instead of being scattered across the building's setup.</p>
+  <figure class="wide"><img src="../assets/access-management/screen-3.webp" alt="Final screens: the groups list, the access matrix view, and the edit-group panel"><figcaption>The shipped experience: the groups list, the access overview, and the edit-group panel where doors, time windows, and people come together.</figcaption></figure>
+
+  <h2>Constraints we built against</h2>
+  <p>We shipped this without much of a safety net: no established design system, a front end on Bootstrap 3, a team of mostly back-end engineers, and a single front-end developer shared across projects. A good part of the job was advocating for the UX and the interactions over whatever the framework made easy.</p>
+
+  <h2>Outcomes</h2>
+  <p>Permission groups launched across the entire fleet and was announced publicly soon after. All 6,529 buildings (100%) went live with access management, every property carrying at least one default group, so single-zone buildings transitioned with no action required from the manager. Of the 421 properties running more than one zone, 322 (76%) created at least one additional group to set up differentiated access.</p>
+  <p>Property managers organized their groups in ways we expected and a few we did not: by building or location, by floor, by restricted or staff-only access, commercial versus residential, and by paid amenity.</p>
+
+  <h2>Why it mattered</h2>
+  <p>Permission groups were the foundation that let ButterflyMX grow past the intercom. With access modeled around people, doors, and time, the platform could add keypads, smart locks, elevator controls, and key lockers and have a coherent place to put them. It made the whole product line more useful, and a great deal stickier for the buildings that ran on it.</p>
+
+  <div class="next-prev">
+    <a href="intercom.html"><span class="lbl">← Previous</span>Reimagining the smart intercom</a>
+    <a href="resident-app.html" style="text-align:right"><span class="lbl">Next →</span>The resident app, re-architected</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>New York City</span>
+    <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
+  </div>
+</footer>
+</body>
+</html>

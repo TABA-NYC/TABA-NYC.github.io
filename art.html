@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="clay">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art · Tyler Pruyn</title>
+<meta name="description" content="Personal art by Tyler Pruyn. Paintings, prints, photographs, and digital compositions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="clay.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+.art-head{padding:calc(var(--space-64) + var(--space-24)) 0 var(--space-8)}
+.art-head .kicker{font-size:var(--font-size-11);line-height:var(--line-height-11);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:var(--space-16)}
+.art-head h1{font-family:var(--serif);font-weight:500;font-size:clamp(var(--font-size-40),6vw,var(--font-size-60));letter-spacing:-.025em;line-height:1.13}
+.art-head .lede{margin-top:var(--space-16);font-size:var(--font-size-18);line-height:var(--line-height-18);color:var(--muted);max-width:580px}
+.gallery{columns:3;column-gap:var(--space-16);padding:var(--space-40) 0 var(--space-16)}
+@media(max-width:900px){.gallery{columns:2}}
+@media(max-width:560px){.gallery{columns:1}}
+.art-item{display:block;break-inside:avoid;margin:0 0 var(--space-16);border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);background:var(--bg-surface-default);cursor:zoom-in;transition:.2s ease-out}
+.art-item:hover{transform:translateY(calc(-1*var(--space-2)));box-shadow:0 4px 8px color-mix(in srgb,var(--color-neutral-900) 8%,transparent),0 8px 20px color-mix(in srgb,var(--color-neutral-900) 12%,transparent)}
+.art-item img{display:block;width:100%;height:auto}
+.lb{position:fixed;inset:0;background:color-mix(in srgb,var(--color-neutral-950) 93%,transparent);display:none;align-items:center;justify-content:center;z-index:100;padding:var(--space-32);cursor:zoom-out}
+.lb.open{display:flex}
+.lb img{max-width:95vw;max-height:92vh;border-radius:var(--radius-sm);box-shadow:0 8px 16px color-mix(in srgb,var(--color-neutral-900) 10%,transparent),0 16px 32px color-mix(in srgb,var(--color-neutral-900) 14%,transparent)}
+.lb button{position:absolute;color:var(--color-neutral-50);background:none;border:none;cursor:pointer;opacity:.8}
+.lb button:hover{opacity:1}
+.lb .close{top:var(--space-16);right:var(--space-24);font-size:var(--font-size-32);line-height:1}
+.lb .nav{top:50%;transform:translateY(-50%);font-size:var(--font-size-40);padding:var(--space-12)}
+.lb .prev{left:var(--space-12)}
+.lb .next{right:var(--space-12)}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html">Tyler Pruyn</a>
+    <span class="links">
+      <a href="index.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="art.html" class="active">Art</a>
+      <a href="assets/TP_Resume_2026.pdf">Resume</a>
+    </span>
+  </div>
+</nav>
+
+<header class="art-head wrap">
+  <div class="kicker">Art</div>
+  <h1>Art</h1>
+  <p class="lede">Work I make for myself. Paint, print, photography, and digital composition, collected over the years. Click any piece to view it larger.</p>
+</header>
+
+<main class="wrap">
+  <div class="gallery">
+      <a class="art-item" href="assets/art/art-01.webp" title="SPEEDKILLS" data-full="assets/art/art-01.webp"><img loading="lazy" src="assets/art/art-01.webp" alt="SPEEDKILLS"></a>
+      <a class="art-item" href="assets/art/art-02.webp" title="Ethereal Realm #90 (Bowser)" data-full="assets/art/art-02.webp"><img loading="lazy" src="assets/art/art-02.webp" alt="Ethereal Realm #90 (Bowser)"></a>
+      <a class="art-item" href="assets/art/art-03.webp" title="Night Regulation (Foster)" data-full="assets/art/art-03.webp"><img loading="lazy" src="assets/art/art-03.webp" alt="Night Regulation (Foster)"></a>
+      <a class="art-item" href="assets/art/art-04.webp" title="LIFE SQUALOR ESCAPISM" data-full="assets/art/art-04.webp"><img loading="lazy" src="assets/art/art-04.webp" alt="LIFE SQUALOR ESCAPISM"></a>
+      <a class="art-item" href="assets/art/art-05.webp" title="Rising Scum (skate relic #4) Margera" data-full="assets/art/art-05.webp"><img loading="lazy" src="assets/art/art-05.webp" alt="Rising Scum (skate relic #4) Margera"></a>
+      <a class="art-item" href="assets/art/art-06.webp" title="Rising Scum (skate relics #3) Dollin" data-full="assets/art/art-06.webp"><img loading="lazy" src="assets/art/art-06.webp" alt="Rising Scum (skate relics #3) Dollin"></a>
+      <a class="art-item" href="assets/art/art-07.webp" title="Screenshot 2024-01-05 at 4.17.38 PM" data-full="assets/art/art-07.webp"><img loading="lazy" src="assets/art/art-07.webp" alt="Screenshot 2024-01-05 at 4.17.38 PM"></a>
+      <a class="art-item" href="assets/art/art-08.webp" title="Screenshot 2024-01-05 at 4.20.30 PM" data-full="assets/art/art-08.webp"><img loading="lazy" src="assets/art/art-08.webp" alt="Screenshot 2024-01-05 at 4.20.30 PM"></a>
+      <a class="art-item" href="assets/art/art-09.webp" title="Screenshot 2024-01-05 at 4.19.03 PM" data-full="assets/art/art-09.webp"><img loading="lazy" src="assets/art/art-09.webp" alt="Screenshot 2024-01-05 at 4.19.03 PM"></a>
+      <a class="art-item" href="assets/art/art-10.webp" title="Screenshot 2024-01-05 at 4.16.41 PM" data-full="assets/art/art-10.webp"><img loading="lazy" src="assets/art/art-10.webp" alt="Screenshot 2024-01-05 at 4.16.41 PM"></a>
+      <a class="art-item" href="assets/art/art-11.webp" title="Screenshot 2024-01-05 at 4.19.26 PM" data-full="assets/art/art-11.webp"><img loading="lazy" src="assets/art/art-11.webp" alt="Screenshot 2024-01-05 at 4.19.26 PM"></a>
+      <a class="art-item" href="assets/art/art-12.webp" title="Screenshot 2024-01-05 at 4.17.18 PM" data-full="assets/art/art-12.webp"><img loading="lazy" src="assets/art/art-12.webp" alt="Screenshot 2024-01-05 at 4.17.18 PM"></a>
+      <a class="art-item" href="assets/art/art-13.webp" title="Screenshot 2024-01-05 at 4.16.21 PM" data-full="assets/art/art-13.webp"><img loading="lazy" src="assets/art/art-13.webp" alt="Screenshot 2024-01-05 at 4.16.21 PM"></a>
+      <a class="art-item" href="assets/art/art-14.webp" title="Screenshot 2024-01-05 at 4.17.01 PM" data-full="assets/art/art-14.webp"><img loading="lazy" src="assets/art/art-14.webp" alt="Screenshot 2024-01-05 at 4.17.01 PM"></a>
+      <a class="art-item" href="assets/art/art-15.webp" title="IMG-6248a" data-full="assets/art/art-15.webp"><img loading="lazy" src="assets/art/art-15.webp" alt="IMG-6248a"></a>
+      <a class="art-item" href="assets/art/art-16.webp" title="IMG-6081 (1)" data-full="assets/art/art-16.webp"><img loading="lazy" src="assets/art/art-16.webp" alt="IMG-6081 (1)"></a>
+      <a class="art-item" href="assets/art/art-17.webp" title="American psycho" data-full="assets/art/art-17.webp"><img loading="lazy" src="assets/art/art-17.webp" alt="American psycho"></a>
+      <a class="art-item" href="assets/art/art-18.webp" title="Screenshot 2024-01-05 at 4.20.05 PM" data-full="assets/art/art-18.webp"><img loading="lazy" src="assets/art/art-18.webp" alt="Screenshot 2024-01-05 at 4.20.05 PM"></a>
+      <a class="art-item" href="assets/art/art-19.webp" title="cool modern grief" data-full="assets/art/art-19.webp"><img loading="lazy" src="assets/art/art-19.webp" alt="cool modern grief"></a>
+      <a class="art-item" href="assets/art/art-20.webp" title="in to the woods" data-full="assets/art/art-20.webp"><img loading="lazy" src="assets/art/art-20.webp" alt="in to the woods"></a>
+      <a class="art-item" href="assets/art/art-21.webp" title="river runs red" data-full="assets/art/art-21.webp"><img loading="lazy" src="assets/art/art-21.webp" alt="river runs red"></a>
+      <a class="art-item" href="assets/art/art-22.webp" title="taba close up" data-full="assets/art/art-22.webp"><img loading="lazy" src="assets/art/art-22.webp" alt="taba close up"></a>
+      <a class="art-item" href="assets/art/art-23.webp" title="road kill" data-full="assets/art/art-23.webp"><img loading="lazy" src="assets/art/art-23.webp" alt="road kill"></a>
+      <a class="art-item" href="assets/art/art-24.webp" title="taba fox3c" data-full="assets/art/art-24.webp"><img loading="lazy" src="assets/art/art-24.webp" alt="taba fox3c"></a>
+      <a class="art-item" href="assets/art/art-25.webp" title="american dream" data-full="assets/art/art-25.webp"><img loading="lazy" src="assets/art/art-25.webp" alt="american dream"></a>
+      <a class="art-item" href="assets/art/art-26.webp" title="the city will break your heart" data-full="assets/art/art-26.webp"><img loading="lazy" src="assets/art/art-26.webp" alt="the city will break your heart"></a>
+      <a class="art-item" href="assets/art/art-27.webp" title="Road closed" data-full="assets/art/art-27.webp"><img loading="lazy" src="assets/art/art-27.webp" alt="Road closed"></a>
+      <a class="art-item" href="assets/art/art-28.webp" title="boy" data-full="assets/art/art-28.webp"><img loading="lazy" src="assets/art/art-28.webp" alt="boy"></a>
+      <a class="art-item" href="assets/art/art-29.webp" title="keep going" data-full="assets/art/art-29.webp"><img loading="lazy" src="assets/art/art-29.webp" alt="keep going"></a>
+      <a class="art-item" href="assets/art/art-30.webp" title="frank here" data-full="assets/art/art-30.webp"><img loading="lazy" src="assets/art/art-30.webp" alt="frank here"></a>
+      <a class="art-item" href="assets/art/art-31.webp" title="JUST A DREAM COMPOSITION#105" data-full="assets/art/art-31.webp"><img loading="lazy" src="assets/art/art-31.webp" alt="JUST A DREAM COMPOSITION#105"></a>
+      <a class="art-item" href="assets/art/art-32.webp" title="duckface" data-full="assets/art/art-32.webp"><img loading="lazy" src="assets/art/art-32.webp" alt="duckface"></a>
+      <a class="art-item" href="assets/art/art-33.webp" title="death and taxes" data-full="assets/art/art-33.webp"><img loading="lazy" src="assets/art/art-33.webp" alt="death and taxes"></a>
+      <a class="art-item" href="assets/art/art-34.webp" title="world piece II" data-full="assets/art/art-34.webp"><img loading="lazy" src="assets/art/art-34.webp" alt="world piece II"></a>
+      <a class="art-item" href="assets/art/art-35.webp" title="ghost club" data-full="assets/art/art-35.webp"><img loading="lazy" src="assets/art/art-35.webp" alt="ghost club"></a>
+      <a class="art-item" href="assets/art/art-36.webp" title="IMG 1953 1" data-full="assets/art/art-36.webp"><img loading="lazy" src="assets/art/art-36.webp" alt="IMG 1953 1"></a>
+      <a class="art-item" href="assets/art/art-37.webp" title="I REMEMBER THIS COMPOSITION#15" data-full="assets/art/art-37.webp"><img loading="lazy" src="assets/art/art-37.webp" alt="I REMEMBER THIS COMPOSITION#15"></a>
+      <a class="art-item" href="assets/art/art-38.webp" title="SHUT YOUR MOUTH COMPOSITION#51" data-full="assets/art/art-38.webp"><img loading="lazy" src="assets/art/art-38.webp" alt="SHUT YOUR MOUTH COMPOSITION#51"></a>
+      <a class="art-item" href="assets/art/art-39.webp" title="HALT SIGN" data-full="assets/art/art-39.webp"><img loading="lazy" src="assets/art/art-39.webp" alt="HALT SIGN"></a>
+      <a class="art-item" href="assets/art/art-40.webp" title="I WAS A SAURUS" data-full="assets/art/art-40.webp"><img loading="lazy" src="assets/art/art-40.webp" alt="I WAS A SAURUS"></a>
+      <a class="art-item" href="assets/art/art-41.webp" title="NOLONGERTHECASE COMPOSITION#5" data-full="assets/art/art-41.webp"><img loading="lazy" src="assets/art/art-41.webp" alt="NOLONGERTHECASE COMPOSITION#5"></a>
+      <a class="art-item" href="assets/art/art-42.webp" title="THEWAR COMPOSITION#45" data-full="assets/art/art-42.webp"><img loading="lazy" src="assets/art/art-42.webp" alt="THEWAR COMPOSITION#45"></a>
+      <a class="art-item" href="assets/art/art-43.webp" title="DO WHAT I WANT MICKEY COMPOSITION#64" data-full="assets/art/art-43.webp"><img loading="lazy" src="assets/art/art-43.webp" alt="DO WHAT I WANT MICKEY COMPOSITION#64"></a>
+      <a class="art-item" href="assets/art/art-44.webp" title="IMG 1932 1" data-full="assets/art/art-44.webp"><img loading="lazy" src="assets/art/art-44.webp" alt="IMG 1932 1"></a>
+      <a class="art-item" href="assets/art/art-45.webp" title="SAME MAY BE COMPOSITION#24" data-full="assets/art/art-45.webp"><img loading="lazy" src="assets/art/art-45.webp" alt="SAME MAY BE COMPOSITION#24"></a>
+      <a class="art-item" href="assets/art/art-46.webp" title="SANS FAIL COMPOSITION#83" data-full="assets/art/art-46.webp"><img loading="lazy" src="assets/art/art-46.webp" alt="SANS FAIL COMPOSITION#83"></a>
+      <a class="art-item" href="assets/art/art-47.webp" title="WHAT A WASTE COMPOSITION #41" data-full="assets/art/art-47.webp"><img loading="lazy" src="assets/art/art-47.webp" alt="WHAT A WASTE COMPOSITION #41"></a>
+      <a class="art-item" href="assets/art/art-48.webp" title="BURNOUT COMPOSITION#18" data-full="assets/art/art-48.webp"><img loading="lazy" src="assets/art/art-48.webp" alt="BURNOUT COMPOSITION#18"></a>
+      <a class="art-item" href="assets/art/art-49.webp" title="SAIDno COMPOSITION#3" data-full="assets/art/art-49.webp"><img loading="lazy" src="assets/art/art-49.webp" alt="SAIDno COMPOSITION#3"></a>
+      <a class="art-item" href="assets/art/art-50.webp" title="SAIDno COMPOSITION#2" data-full="assets/art/art-50.webp"><img loading="lazy" src="assets/art/art-50.webp" alt="SAIDno COMPOSITION#2"></a>
+      <a class="art-item" href="assets/art/art-51.webp" title="SAIDno COMPOSITION#1" data-full="assets/art/art-51.webp"><img loading="lazy" src="assets/art/art-51.webp" alt="SAIDno COMPOSITION#1"></a>
+  </div>
+</main>
+
+<div class="lb" id="lb">
+  <button class="close" id="lbclose" aria-label="Close">×</button>
+  <button class="nav prev" id="lbprev" aria-label="Previous">‹</button>
+  <img id="lbimg" alt="">
+  <button class="nav next" id="lbnext" aria-label="Next">›</button>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>New York City</span>
+    <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.art-item'));
+  var lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg'), i=-1;
+  function show(n){ if(n<0)n=items.length-1; if(n>=items.length)n=0; i=n; lbimg.src=items[i].dataset.full; lb.classList.add('open'); }
+  function close(){ lb.classList.remove('open'); lbimg.src=''; }
+  items.forEach(function(a,n){ a.addEventListener('click',function(e){ e.preventDefault(); show(n); }); });
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target===lbimg) close(); });
+  document.getElementById('lbclose').addEventListener('click',close);
+  document.getElementById('lbprev').addEventListener('click',function(e){ e.stopPropagation(); show(i-1); });
+  document.getElementById('lbnext').addEventListener('click',function(e){ e.stopPropagation(); show(i+1); });
+  document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open'))return; if(e.key==='Escape')close(); if(e.key==='ArrowLeft')show(i-1); if(e.key==='ArrowRight')show(i+1); });
+})();
+</script>
+</body>
+</html>

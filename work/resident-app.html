@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="clay">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The resident app, re-architected · Tyler Pruyn</title>
+<meta name="description" content="How a research-led IA redesign turned ButterflyMX's door-opener app into a resident platform. 4.8 on the App Store across 99K+ ratings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../clay.css">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="../index.html">Tyler Pruyn</a>
+    <span class="links">
+      <a href="../index.html" class="active">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../art.html">Art</a>
+      <a href="../assets/TP_Resume_2026.pdf">Resume</a>
+    </span>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <div class="kicker" style="display:flex;align-items:center;gap:var(--space-12)"><img src="../assets/intercom/bmx-logo-2026.svg" alt="ButterflyMX" style="height:var(--space-24);width:auto"> <span>Product Design Director</span></div>
+    <h1>The resident app, re-architected</h1>
+    <p class="lede">ButterflyMX's app did one thing brilliantly: open the door. The business needed it to do much more (amenities, maintenance, payments, building life) but the app was never designed to grow. I made the case for doing it right, won nine weeks for research and a proof of concept, and redesigned the architecture that still structures the app today.</p>
+    <div class="cs-meta">
+      <div><b>Role</b>Product Design Director: research plan, IA, testing, UI direction</div>
+      <div><b>Team</b>Design × PM, with engineering consulted throughout</div>
+      <div><b>Timeline</b>9-week proof of concept → phased feature rollout</div>
+      <div><b>Platform</b>iOS · Android</div>
+    </div>
+  </div>
+</header>
+
+<main class="cs-body wrap">
+  <h2>Outcomes first</h2>
+  <div class="outcomes" style="width:min(960px,100%)">
+    <div class="outcome"><b>4.8</b><span>App Store rating across 99K+ ratings (4.7 on Google Play)</span></div>
+    <div class="outcome"><b>Still live</b><span>the IA and navigation from this redesign structure the app today</span></div>
+    <div class="outcome"><b>9 weeks</b><span>won from leadership for research-led discovery, with no pushback</span></div>
+    <div class="outcome"><b>New muscle</b><span>changed how the company valued research and testing</span></div>
+  </div>
+  <p>The home-screen swipe-to-open interaction remains the app's core action pattern, and the cohesive system this work produced became embedded across all of ButterflyMX's products as it expanded into smart-home integrations and new verticals.</p>
+
+  <a class="proto-cta" href="../prototypes/resident-app/index.html">
+    <span>
+      <span class="t">Try the working prototype</span>
+      <span class="s" style="display:block">A coded, swipeable rebuild of the resident app: home, doors, visitors, building, and account. Built by me, in code.</span>
+    </span>
+    <span class="go">Open prototype →</span>
+  </a>
+
+  <h2>Context</h2>
+  <p>ButterflyMX connects residents to their buildings: see who's at the door, let them in, manage guest access. The app earned its ratings doing exactly that. But the roadmap wanted amenity reservations, maintenance requests, building notifications, rent payments, and support, and the app's architecture had no room for any of it. Bolting features onto a door-opener would have buried the one interaction people loved.</p>
+
+  <h2>Winning the time to do it right</h2>
+  <p>ButterflyMX was still new to formal research and discovery. Working closely with my PM, I drafted a plan that made the case to leadership in their terms: validate the direction before engineering commits, or pay for the rework later. Leadership approved nine weeks for a proof of concept, with engineering focused on other priorities, and gave us the room with no pushback. The deeper outcome of this project is that the process stuck.</p>
+
+  <h2>Research</h2>
+  <h3>Competitive analysis, 8 products</h3>
+  <p>Every resident-experience app we studied confirmed a few patterns: notifications are the highest-value common feature; the most valuable features connect resident and building through communication; guest access is a top need in secure buildings; and home screens prioritize high-frequency actions. Account sections were remarkably consistent: lease, payments, settings.</p>
+  <h3>Card sorting, 6 sessions</h3>
+  <p>I ran 45-minute card sorts with participants role-playing residents of a modern multifamily building, grouping feature cards into categories that made sense to them. Four themes emerged, in residents' own logic: <em>access I control for myself and others; things I can do in my building; things I need to know about my building; things regarding my profile, payments, and preferences.</em></p>
+  <h3>IA testing, 10 participants</h3>
+  <p>Using UserZoom, we tested the proposed architecture with residents of multifamily buildings: where would you expect to find a guest pass, a maintenance request, your lease? Despite some technical hiccups, the majority of tasks passed, and the failures were instructive: access history mattered less than we assumed (nested into Account), arrival notifications mattered more, and a community bulletin board ranked low enough to deprioritize entirely.</p>
+  <figure class="wide"><img src="../assets/resident-app/home-test.png" alt="De-branded home screen concept used in IA testing, with quick create actions and swipe-to-open"><figcaption>The de-branded concept we tested: quick create, swipe-to-open, and the new four-tab navigation.</figcaption></figure>
+
+  <h2>The new architecture</h2>
+  <p>The old navigation had five tabs (Home, Visitor Access, Account, Calls, Activity), two of which existed only because the system generated calls and events, not because residents thought that way. The new model has four, mapped to the research themes: <strong>Home</strong> for high-frequency actions, <strong>Building</strong> as the new growth surface (doors, contacts, amenities, maintenance), <strong>Visitor Access</strong>, and <strong>Account</strong>. Calls and activity became notifications, where residents expected them.</p>
+  <figure class="wide"><img src="../assets/resident-app/evolution-at-a-glance.png" alt="Mobile UX evolution at a glance: how each tab evolves over time with legacy, updated, new, and evolved screens"><figcaption>The scaling plan: each tab's evolution mapped over time, so features land in the right place instead of wherever fits.</figcaption></figure>
+  <p>The point of the Building tab wasn't the features it launched with; it was the ones it could absorb later without another re-architecture. The service blueprint below maps how a maintenance request flows across resident, app, staff, and systems, the kind of artifact that kept new features landing coherently.</p>
+  <figure class="wide"><img src="../assets/resident-app/service-blueprint.png" alt="Maintenance request service blueprint across resident, app, building staff, and backend systems"><figcaption>Maintenance request service blueprint: the Building tab's features were designed as services, not screens.</figcaption></figure>
+
+  <h2>What shipped</h2>
+  <p>The redesigned app rolled out with the new navigation, an elevated visual system, and the first Building-tab features, with amenity reservations leading. Quick actions and customization landed on Home, where research said residents wanted control.</p>
+  <figure class="wide"><img src="../assets/resident-app/app-hero.png" alt="ButterflyMX resident app: splash screen and home screen with shortcuts and door controls"><figcaption>The shipped app: shortcuts, doors, and the patterns residents already trusted, now with room to grow.</figcaption></figure>
+  <figure><img src="../assets/resident-app/amenities.png" alt="Amenities screen with rooftop lounge, key locker, and gym listings"><figcaption>Amenity reservations: the first proof that the Building tab could carry new business lines.</figcaption></figure>
+
+  <h2>Reflection</h2>
+  <p>The architecture outlived my tenure, which is the outcome I value most. The IA and navigation still structure the live app, the swipe-to-open pattern is still the signature interaction, and the app kept its ratings while becoming a platform. The quieter legacy: this was the project that taught the company what research buys, and the discovery process it introduced became how product work got done.</p>
+
+  <div class="next-prev">
+    <a href="access-management.html"><span class="lbl">← Previous</span>Access management for 6,500 buildings</a>
+    <a href="filters.html" style="text-align:right"><span class="lbl">Next →</span>Improving navigation: filters &amp; saved views</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>New York City</span>
+    <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
+  </div>
+</footer>
+</body>
+</html>

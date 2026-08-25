@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="clay">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filters &amp; saved views · Tyler Pruyn</title>
+<meta name="description" content="A research-backed filtering pattern at Darwin Homes, overruled once, that came back to standardize how an entire platform finds its data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../clay.css">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="../index.html">Tyler Pruyn</a>
+    <span class="links">
+      <a href="../index.html" class="active">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../art.html">Art</a>
+      <a href="../assets/TP_Resume_2026.pdf">Resume</a>
+    </span>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <div class="kicker">Darwin Homes · Lead Product Designer · 2022 to 2024</div>
+    <h1>Improving navigation: filters &amp; saved views</h1>
+    <p class="lede">A research-backed pattern, overruled once, that came back to standardize how an entire platform finds its data. Operators were searching spreadsheets for record IDs and pasting them into URLs. Two attempts and one org change later, a single filter and saved-view system runs across all of Origin.</p>
+    <div class="cs-meta">
+      <div><b>Role</b>Lead Product Designer: research, concepts, IC design</div>
+      <div><b>Team</b>Attempt 1 with a junior designer · attempt 2 with a senior designer and PM</div>
+      <div><b>Timeline</b>Nov 2022 to May 2023 · resumed Oct 2023 · platform-wide rollout</div>
+      <div><b>Platform</b>Origin web platform: Bills, Resident CRM, and beyond</div>
+    </div>
+  </div>
+</header>
+
+<main class="cs-body wrap">
+  <h2>Outcomes first</h2>
+  <div class="outcomes" style="width:min(960px,100%)">
+    <div class="outcome"><b>On time</b><span>month-end close stayed on schedule as property volume grew, per Accounts Payable</span></div>
+    <div class="outcome"><b>1 pattern</b><span>Bills to Resident CRM to the rest of Origin, inherited instead of reinvented</span></div>
+    <div class="outcome"><b>0</b><span>browser-tab workarounds left: operators stopped keeping views as open tabs</span></div>
+    <div class="outcome"><b>2 attempts</b><span>the research held; the second attempt landed when the leverage arrived</span></div>
+  </div>
+
+  <h2>Context</h2>
+  <p>Every surface had its own filters. The biggest had none. On Records, operators would search spreadsheets for record IDs and paste them into URLs to reach a unit detail page. Where filters existed they were static dropdowns: no multi-select, no overflow handling, no persistence, and every surface did it differently. Leadership's take: "make it work like Ramp."</p>
+
+  <h2>Attempt one: research said one thing, the room wanted Ramp</h2>
+  <p>I ran the initial research with a junior designer: a current-state study of internal operators, pattern exploration across comparable products, and a proposal that was modest, learnable, and shaped around operator mental models and engineering effort.</p>
+  <p>The proposal was overruled in favor of the Ramp-style combined field. It shipped only inside the Acquisition Portal, and when that project was shelved, the pattern died with it. The pitfalls we had flagged were real: every click in a multi-select closed the menu, real-time filtering lagged at our volumes, and the mental model was foreign to operators.</p>
+  <!-- figure slot: the Find & Filter pattern live in the Acquisition Portal, 2023 -->
+
+  <h2>Attempt two: the problem came back with leverage</h2>
+  <p>Accounts Payable was drowning. More properties under management made the missing filters actively painful, especially reconciliation tied to month-end close: real operational pain, on a clock, every month. The org had also changed. The Head of Design had left, a new PM was willing to own the initiative and advocate for design, and we reported directly to the Head of Product.</p>
+  <p class="pull">Alignment before pixels: we re-raised the three Ramp pitfalls and got explicit sign-off on direction first. Leadership was frustrated it was not going Ramp-ward, but understood they were not the main users.</p>
+
+  <h2>Research: two concepts, four operators, scripted tasks</h2>
+  <p>A newly hired senior designer and I sketched separately across modals, slide-out panels, and large dropdowns, brought the work to critique, and landed on two concepts strong enough to test. We tested with four real operators, two from Accounting and two from Leasing, on scripted tasks: applying filters, creating a view, setting a default, editing applied filters, saving to an existing view.</p>
+  <p>A moment I'd flag: mid-study, the senior designer was iterating between sessions and showing different tweaks to different participants. I pulled them aside and we agreed to freeze the prototype for the remaining testers. Protecting test fidelity beat incremental visual progress, and it was an early calibration moment for someone new to the team.</p>
+  <h3>What the research surfaced</h3>
+  <ul>
+    <li>Users were building their own view system out of browser tabs, and losing them constantly.</li>
+    <li>Applied filters must stay visible: people forgot what they had selected.</li>
+    <li>Filters themselves need search: Owners, Vendors, and Portfolios were huge lists.</li>
+    <li>Filters reset when navigating away, so operators re-applied everything each time they came back.</li>
+    <li>Frontline wants one default, managers want many: views are role-shaped, and a default is a property of any view, not a separate special view.</li>
+  </ul>
+
+  <h2>What shipped</h2>
+  <p>Bills 2.0: filter pills with counts, an all-filters menu, and saved views that stick. The interactions we fixed, deliberately, one by one:</p>
+  <ul>
+    <li>Multi-select stays open: checkboxes, not one-click-and-close.</li>
+    <li>Apply shows its consequences: the result count sits on the button before you commit.</li>
+    <li>Edit from the pill: applied filters are interactive, not just labels.</li>
+    <li>Built to scale with the page: counts rather than values in pills, +N overflow, search inside big filters.</li>
+    <li>Views that stick: a default auto-applies on login, and any view is shareable by link.</li>
+  </ul>
+  <!-- figure slot: before, static dropdowns with no persistence -->
+  <!-- figure slot: after, Bills 2.0 with pills, counts, and a saved view active -->
+
+  <h2>Scope discipline and rollout</h2>
+  <p>Two late leadership asks arrived: search inside the all-filters menu, and shared admin saved views. The accounting team was willing to build both, wanting the complete solution shaped around accounting operators. Rollout went surface by surface: Bills first for AP reconciliation, then Resident CRM for leasing search and client portfolio filters, then everywhere. Leasing, Applicants, Properties, and Portfolios inherited the same filter and view interactions instead of inventing their own: a compounding win for platform coherence.</p>
+
+  <h2>Impact, qualified</h2>
+  <p>The impact is qualitative, specific, and named. Accounts Payable called out the system for keeping reconciliation, and close, on schedule as volume grew. Operators stopped using browser tabs as a saved-view system. One pattern now runs from Bills to Resident CRM to the rest of Origin without reinvention.</p>
+  <p>What I'd do differently: we never instrumented baseline KPIs before shipping. The final decisions doc flagged it; we shipped anyway. Adoption by surface, time-to-saved-view, filter counts: I would define those first now.</p>
+
+  <p class="pull">"Make it work like X" is a leadership instinct, not a requirement. The job is translating it: what is X actually solving, and is our problem the same shape? The right design also needs the right org conditions to land. Patience, and knowing when the leverage has arrived, is part of the craft.</p>
+
+  <div class="next-prev">
+    <a href="resident-app.html"><span class="lbl">← Previous</span>The resident app, re-architected</a>
+    <a href="northwell-clm.html" style="text-align:right"><span class="lbl">Next →</span>Contract intelligence at Northwell</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>New York City</span>
+    <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="clay">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebuilding the Leasing CRM · Tyler Pruyn</title>
+<meta name="description" content="How a ground-up rebuild of Darwin Homes' leasing CRM unlocked a 3,000-home institutional release and roughly 30% monthly revenue growth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../clay.css">
+<link rel="stylesheet" href="../styles.css">
+<style>
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);margin:var(--space-32) 0;width:min(960px,calc(100vw - var(--space-64)))}
+.ba figure{margin:0;width:100%}
+.ba .tag{display:inline-block;font-size:var(--font-size-11);line-height:var(--line-height-11);letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:var(--radius-full);padding:var(--space-4) var(--space-8);margin-bottom:var(--space-8)}
+.ba .tag.now{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius-md);padding:var(--space-20) var(--space-24);margin:var(--space-32) 0}
+.note b{display:block;margin-bottom:var(--space-4)}
+@media(max-width:820px){.ba{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="../index.html">Tyler Pruyn</a>
+    <span class="links">
+      <a href="../index.html" class="active">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../art.html">Art</a>
+      <a href="../assets/TP_Resume_2026.pdf">Resume</a>
+    </span>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <div class="kicker">Darwin Homes · Design Lead · 2025</div>
+    <h1>Rebuilding the leasing CRM</h1>
+    <p class="lede">Darwin's largest institutional client would not release the rest of their portfolio until leasing could actually be run inside our platform. The CRM was the reason it could not. I rebuilt it around the prospect instead of the property, and we shipped it before peak leasing season.</p>
+    <div class="cs-meta">
+      <div><b>Role</b>Design Lead: research, IA, UX/UI, usability testing</div>
+      <div><b>Team</b>PM (Aaron), engineering (Cody, Brian, Enrique), leasing ops, external comms</div>
+      <div><b>Timeline</b>Discovery late 2024, build Jan to Feb 2025, released early March 2025</div>
+      <div><b>Platform</b>B2B web, internal operations tool</div>
+    </div>
+  </div>
+</header>
+
+<main class="cs-body wrap">
+  <h2>Outcomes</h2>
+  <div class="outcomes" style="width:min(960px,100%)">
+    <div class="outcome"><b>3,000+</b><span>homes released into Darwin's management by the client after review</span></div>
+    <div class="outcome"><b>~30%</b><span>increase in monthly revenue from that release</span></div>
+    <div class="outcome"><b>5 days</b><span>off vacant-home days on market</span></div>
+    <div class="outcome"><b>~50%</b><span>reduction in the application timeline</span></div>
+  </div>
+  <p>Time from a prospect's first interest to a signed lease dropped by four days, homes started leasing in under 30 days, and the leasing team stopped running its day out of spreadsheets and third-party dashboards.</p>
+
+  <!-- RESTORE WHEN prototypes/leasing-crm/ EXISTS:
+<a class="proto-cta" href="../prototypes/leasing-crm/index.html">
+    <span>
+      <span class="t">Try the working prototype</span>
+      <span class="s" style="display:block">A coded, clickable version of the rebuilt CRM: list view, prospect detail, pipeline, and activity log. Real interactions, sample data.</span>
+    </span>
+    <span class="go">Open prototype →</span>
+  </a>
+-->
+
+  <h2>Context</h2>
+  <p>Darwin Homes manages single-family rentals for institutional owners. Thousands of homes across a dozen markets, each one listed, toured, applied for, and leased through our platform. When the company moved upmarket from retail landlords with a handful of houses to institutional portfolios with thousands, the leasing CRM was the first thing to break. It had been built for the small end of the market, and it showed.</p>
+  <p>Our newest client made it explicit. A working CRM was a hard requirement before they would commit the remaining 3,000-plus properties of their portfolio, and they needed it running before peak leasing season. That gave us a real deadline attached to real revenue, which is a rare and useful thing to have.</p>
+
+  <h2>The problem</h2>
+  <p>The flaw was structural. A record was created every time somebody inquired about a home, so the system was organized around properties, not people. One prospect interested in two houses became two unrelated records, each with half the story. Everything else followed from that.</p>
+
+  <figure class="wide"><img src="../assets/leasing-crm/before-detail.png" alt="The old prospect detail page with a raw system timeline"><figcaption>The old prospect record. A phone call arrived as a pasted block of text, sitting in the same undifferentiated feed as "Robot Darwin updated Resident Prospect."</figcaption></figure>
+
+  <ul>
+    <li><strong>Status carried no information.</strong> Sixteen thousand records, all marked Open, with actual progress buried in a text field. There was no way to sort by urgency, because nothing in the data expressed urgency.</li>
+    <li><strong>Duplicate people everywhere.</strong> Finding out how far along someone was, when they were last contacted, and who contacted them meant opening several records and reconstructing the story by hand.</li>
+    <li><strong>Nobody used it.</strong> Leasing ops ran the real process in spreadsheets, third-party dashboards, and external messaging tools, then back-filled the CRM afterward so the next person had breadcrumbs. They were doing the work twice.</li>
+    <li><strong>Communication was scattered.</strong> Email, SMS, calls, and marketing messages each lived somewhere else. No single thread per person, which is exactly the context an agent needs to keep a prospect warm.</li>
+    <li><strong>Nothing ever ended.</strong> There was no state for a prospect who signed, and none for a prospect who did not qualify. Dead records sat in the pipeline and made our numbers look worse than they were to the client reading them.</li>
+  </ul>
+
+  <p class="pull">"Agents were chasing one person across five tools to answer one question: where is this person, and what happens next?"</p>
+
+  <h2>What I did</h2>
+  <h3>Interviewed the leasing team</h3>
+  <p>I sat with leasing operators and walked through their actual day. Six things came up over and over: no way to prioritize by interest or urgency, constant searching because inquiries were never grouped by person, communication split across channels and tools, the same screening information re-collected for every property, stage and status mashed into one ambiguous field, and inquiries that stayed open long after the home was leased.</p>
+  <p>The finding that mattered most was not on the list. The CRM was not slow or awkward. It was abandoned. Once I understood that everything real was happening in a spreadsheet, the design question changed from "how do we improve this tool" to "what would have to be true for them to work here instead."</p>
+
+  <h3>Mapped the funnel end to end</h3>
+  <p>With the incoming client in the room, we mapped the whole journey from listing to signed lease and marked where things stalled. The useful discovery was that the leasing pipeline is close to standardized across the industry. That meant I could commit to one opinionated model instead of designing around endless edge cases, which is what saved us the time we did not have.</p>
+
+  <h3>Studied how other CRMs handle a person</h3>
+  <p>I looked at how proptech and sales CRMs organize one customer's communications, actions, and history. The pattern held across all of them: about two-thirds of the content area goes to dynamic, high-priority information like stage and next action, and the remaining third to static reference data you look at while deciding. Data-dense was the norm, not the exception. That gave me permission to stop protecting white space and design for scanning.</p>
+
+  <h2>The hard part</h2>
+  <p>The right answer was to restructure records around the person. Engineering sized that migration and it was not going to land before leasing season. Separately, leadership pushed back on the prospect-first view entirely. They still wanted to see each property inquiry on its own, even though the research pointed the other way.</p>
+  <p>I could have spent the runway arguing for the pure version and shipped nothing. Instead I took the constraint as the brief: keep the records where they are, at the inquiry level, and move the consolidation into the experience. One prospect view that pulls in every home they have engaged, where each one stands, and who spoke to them last, while every individual inquiry stays searchable and filterable the way leadership wanted. I tested it with internal ops before we built it.</p>
+  <p>The duplicate records still existed underneath. For the person doing the job, they stopped mattering.</p>
+
+  <h2>What shipped</h2>
+  <h3>A four-stage pipeline driven by what the prospect does</h3>
+  <p>Interest, Home Tour, Application, Lease. Stage and sub-status derive from the prospect's own actions, submitting a pre-screen, requesting a tour, starting an application, rather than from what an agent remembers to update. That one decision killed the drift between stage, status, and reality that had made the old data untrustworthy.</p>
+
+  <div class="ba">
+    <figure>
+      <span class="tag">Before</span>
+      <img src="../assets/leasing-crm/before-list-view.png" alt="Old Resident Prospects table showing 16,921 records with every row marked Open">
+      <figcaption>16,921 records, every row marked Open, progress buried in a free-text Step column.</figcaption>
+    </figure>
+    <figure>
+      <span class="tag now">After</span>
+      <img src="../assets/leasing-crm/after-list-view.png" alt="Rebuilt Inquiries list view with stage, progress, and time in stage">
+      <figcaption>After: current stage, a progress tracker, time in stage, and the latest note date, sortable.</figcaption>
+    </figure>
+  </div>
+
+  <h3>One view of a person</h3>
+  <p>The overview tab leads with progress and the dates behind each stage, and the right rail holds context: prospect details, pre-screen results, listing details, and every related inquiry that person has open. Six related inquiries in the example below, which under the old model would have been six separate records nobody connected.</p>
+  <figure class="wide"><img src="../assets/leasing-crm/after-detail-overview.png" alt="Rebuilt inquiry detail page, overview tab"><figcaption>Dynamic pipeline information leads. Reference data supports it from the rail.</figcaption></figure>
+
+  <h3>An activity log you can actually read</h3>
+  <p>The old timeline dumped system events and pasted call notes into one undifferentiated feed. The rebuilt log separates communications, notes, and events, shows the full note inline instead of hiding it behind an expand, and surfaces the latest note in both the table and the overview tab. It also fixed a bug where notes only appeared under the Activity filter, which meant agents had been failing to find notes that were there the whole time.</p>
+  <figure class="wide"><img src="../assets/leasing-crm/activity-feed-expanded.png" alt="Activity log with expanded communication details"><figcaption>Every message, with its channel, type, and trigger, in one thread.</figcaption></figure>
+
+  <h3>Communications inside the record</h3>
+  <p>Phase two brought email, SMS, and calls into the inquiry itself, auto-linked back to the right prospect and listing. It removed the round trip through external ticketing and the manual step of coding a conversation back to a record, which in practice simply got skipped. I designed and specced phases two and three; they shipped after I left.</p>
+  <figure class="wide"><img src="../assets/leasing-crm/after-comms.png" alt="Composing an email directly inside the inquiry record"><figcaption>Composing from the record, with the full history sitting behind it.</figcaption></figure>
+
+  <h2>Scope discipline</h2>
+  <p>A short release with a hard date is mostly a series of small refusals. A few from the planning log:</p>
+  <ul>
+    <li>Cut the manual "mark as inactive" action from v1 rather than build a second way to do something the system could infer.</li>
+    <li>Dropped a "put on hold" action once we confirmed existing waitlist logic already covered every case it was meant to handle.</li>
+    <li>Defined current stage as the latest active or completed stage rather than the next one not yet started, which removed a whole category of ambiguity from the table.</li>
+    <li>Held the backend rename of the underlying model until after release so it would not block the front end.</li>
+  </ul>
+  <p>None of these are interesting on their own. Together they are the reason the date held.</p>
+
+  <h2>Reflection</h2>
+  <p>This was a lesson in shipping the version that fits the window. The structurally correct solution would have missed the client deadline and the leasing season, and being right in Q3 would not have been worth much. What I would do differently is get the disagreement about prospect-level versus property-level views into one room earlier, with the research on the table, instead of resolving it in a review after the concept was already drawn. I spent about two weeks on a compromise I probably could have reached in three days with the right people present.</p>
+  <p>The client released their portfolio. The CRM went from the tool the leasing team avoided to the one they ran the day in. And the object detail framework we built for it, progress up top, context in the rail, activity in its own tab, got reused across other record types in the platform, which was not the goal but turned out to be the most durable part.</p>
+
+  <div class="next-prev">
+    <a href="northwell-clm.html"><span class="lbl">← Previous</span>Contract intelligence at Northwell</a>
+    <a href="renewals.html" style="text-align:right"><span class="lbl">Next →</span>Renewals &amp; resident departure</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>New York City</span>
+    <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
+  </div>
+</footer>
+</body>
+</html>

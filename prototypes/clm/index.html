@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contract workspace · working prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="clay.css">
+<style>
+  .proto-banner{background:var(--obsidian);color:var(--frost);font-size:12.5px;padding:8px 24px;display:flex;justify-content:space-between;align-items:center}
+  .proto-banner a{color:var(--clay-100);text-decoration:none}
+  .app{display:flex;min-height:calc(100vh - 35px)}
+  aside{width:216px;background:var(--nimbus);border-right:1px solid var(--cement);padding:20px 12px;flex-shrink:0}
+  .wordmark{font-family:var(--font-display);font-weight:600;font-size:18px;padding:4px 12px 18px;letter-spacing:-.01em}
+  .wordmark span{color:var(--clay-500)}
+  .navitem{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--radius-sm);font-size:13.5px;font-weight:500;color:var(--graphite);cursor:pointer;margin-bottom:2px;transition:background .15s}
+  .navitem:hover{background:rgba(43,39,34,.04)}
+  .navitem.active{background:var(--bg-elevated);color:var(--clay-700);box-shadow:var(--shadow-xs)}
+  .navitem svg{width:17px;height:17px;stroke-width:1.5}
+  main{flex:1;padding:28px 32px;max-width:1280px}
+  .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+  .greet{font-family:var(--font-display);font-size:26px;font-weight:500;letter-spacing:-.01em}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .stat{background:var(--bg-elevated);border:1px solid var(--cement);border-radius:var(--radius-md);padding:16px 18px;cursor:pointer;transition:box-shadow .15s}
+  .stat:hover{box-shadow:var(--shadow-md)}
+  .stat .v{font-size:26px;font-weight:600;letter-spacing:-.02em}
+  .stat .l{font-size:12.5px;color:var(--stone);margin-top:2px}
+  .stat.attn{border-color:var(--danger-500)}
+  .stat.attn .v{color:var(--danger-600)}
+  .cols{display:grid;grid-template-columns:1.7fr 1fr;gap:16px;align-items:start}
+  .panel-h{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--nimbus)}
+  .panel-h h2{font-size:14px;font-weight:600}
+  .panel-h a{font-size:12.5px;color:var(--clay-600);text-decoration:none;cursor:pointer}
+  .feed{padding:6px 0;max-height:430px;overflow-y:auto}
+  .ev{display:flex;gap:11px;padding:10px 16px;cursor:pointer;transition:background .15s}
+  .ev:hover{background:var(--frost)}
+  .ev .ic{width:28px;height:28px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .ev .ic svg{width:14px;height:14px;stroke-width:1.7}
+  .ev .tx{font-size:12.8px;line-height:1.45;color:var(--graphite)}
+  .ev .tx b{color:var(--obsidian);font-weight:500}
+  .ev .tm{font-size:11.5px;color:var(--stone);margin-top:1px}
+  .days{font-weight:600}
+  .days.d30{color:var(--danger-600)} .days.d60{color:var(--warning-700)}
+  .screen{display:none}.screen.on{display:block}
+  .placeholder{padding:64px;text-align:center;color:var(--stone)}
+  .placeholder h2{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--obsidian);margin-bottom:8px}
+  @media(max-width:980px){.stats{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}aside{display:none}}
+</style>
+</head>
+<body>
+<div class="proto-banner">
+  <span>Working prototype · fictional data · client work de-identified</span>
+  <a href="../../work/northwell-clm.html">← Back to case study</a>
+</div>
+<div class="app">
+  <aside>
+    <div class="wordmark">Contract<span>OS</span></div>
+    <div class="navitem active" data-nav="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75"/></svg>
+      Home
+    </div>
+    <div class="navitem" data-nav="contracts">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+      Contracts
+    </div>
+    <div class="navitem" data-nav="new">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+      New request
+    </div>
+  </aside>
+  <main>
+    <section class="screen on" id="s-dashboard">
+      <div class="topbar">
+        <div>
+          <div class="greet" id="greeting">Good afternoon, Maya</div>
+          <div style="font-size:12.5px;color:var(--stone);margin-top:2px">Here's what needs your attention</div>
+        </div>
+        <button class="primary" onclick="go('new')">New contract</button>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="cols">
+        <div class="card">
+          <div class="panel-h"><h2>My work queue</h2><a onclick="go('contracts')">View all contracts</a></div>
+          <table id="queue"></table>
+        </div>
+        <div class="card">
+          <div class="panel-h"><h2>Recent activity</h2></div>
+          <div class="feed" id="feed"></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div class="panel-h"><h2>Expiring within 90 days</h2></div>
+        <table id="expiring"></table>
+      </div>
+    </section>
+    <section class="screen" id="s-contracts"><div class="placeholder card"><h2>Contract search &amp; browse</h2><p>Coming next: full-text search, state and type filters, sortable columns.</p></div></section>
+    <section class="screen" id="s-record"><div class="placeholder card"><h2>Contract record</h2><p>Coming next: header card, 8 tabs, in-record approvals.</p></div></section>
+    <section class="screen" id="s-new"><div class="placeholder card"><h2>New contract request</h2><p>Coming next: guided 6-step wizard with validation.</p></div></section>
+  </main>
+</div>
+<script>
+const STATUS = {
+  '10':{label:'New, draft',cls:'neutral'},
+  '20':{label:'Pending assignment',cls:'warning'},
+  '40a':{label:'In legal review',cls:'info'},
+  '40c':{label:'Pending vendor',cls:'warning'},
+  '50a':{label:'Submitted for approval',cls:'warning'},
+  '50d':{label:'Pending vendor signature',cls:'warning'},
+  '60':{label:'Ready to close',cls:'info'},
+  '70':{label:'Complete',cls:'success'},
+  '80':{label:'On hold',cls:'neutral'},
+  '120a':{label:'Expired',cls:'danger'}
+};
+const C = [
+  {id:'GPO2604110', t:'Surgical gloves: group purchasing agreement', v:'LATTICE MEDICAL SUPPLY', type:'Contract', st:'50a', exp:'2029-03-31', val:'$5.4M', upd:'3d ago', appr:true},
+  {id:'SER2603221', t:'Imaging equipment maintenance: master services', v:'HELIOS DIAGNOSTICS', type:'Contract', st:'40a', exp:'2027-08-14', upd:'5h ago', val:'$2.1M'},
+  {id:'AMD2604017', t:'Lab reagents pricing amendment', v:'NORTHSTAR LABS', type:'Amendment', st:'40c', exp:'2028-12-31', upd:'1d ago', val:'$870K'},
+  {id:'NDA2604201', t:'Mutual NDA for AI triage pilot', v:'CADENCE HEALTH AI', type:'Standalone', st:'20', exp:'2027-06-30', upd:'2d ago', val:'–'},
+  {id:'GPO2603304', t:'IV solutions & infusion sets', v:'MERIDIAN BIOWORKS', type:'Contract', st:'50d', exp:'2026-08-22', upd:'6d ago', val:'$3.8M'},
+  {id:'SOW2604122', t:'EHR integration services, phase 2', v:'BRIDGEPOINT SYSTEMS', type:'Purchase order', st:'10', exp:'2026-09-05', upd:'4h ago', val:'$640K'},
+  {id:'SER2602218', t:'Linen & laundry services renewal', v:'CLEARWATER SERVICES', type:'Contract', st:'70', exp:'2026-07-13', upd:'2w ago', val:'$1.2M'},
+  {id:'TRI2604233', t:'Cardiac monitor trial agreement', v:'PULSEPOINT DEVICES', type:'Standalone', st:'40a', exp:'2026-08-30', upd:'1d ago', val:'$95K'},
+  {id:'GPO2601150', t:'Orthopedic implants: group purchasing', v:'ATLAS ORTHO GROUP', type:'Contract', st:'70', exp:'2026-06-28', upd:'3w ago', val:'$7.9M'}
+];
+const FEED = [
+  {ic:'refresh',c:'info',t:'<b>Surgical gloves GPO</b> moved to <b>Submitted for approval</b>',m:'3 hours ago'},
+  {ic:'clip',c:'danger',t:'<b>Dana Okafor</b> requested your approval on <b>Surgical gloves GPO</b>. Action required',m:'3 hours ago'},
+  {ic:'mail',c:'plum',t:'Outbound email to <b>Helios Diagnostics</b>: revised SLA terms',m:'5 hours ago'},
+  {ic:'paper',c:'success',t:'<b>Pricing schedule, exhibit A</b> attached to Lab reagents amendment',m:'Yesterday'},
+  {ic:'users',c:'info',t:'<b>NDA for AI triage pilot</b> assigned to legal team',m:'Yesterday'},
+  {ic:'refresh',c:'info',t:'<b>IV solutions GPO</b> sent for vendor signature',m:'2 days ago'},
+  {ic:'note',c:'neutral',t:'<b>Sam Reyes</b> added a note to EHR integration SOW',m:'2 days ago'},
+  {ic:'check',c:'success',t:'<b>Linen services renewal</b> fully executed',m:'2 weeks ago'}
+];
+const ICONS = {
+  refresh:'<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>',
+  clip:'<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/>',
+  mail:'<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>',
+  paper:'<path stroke-linecap="round" stroke-linejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 119.5 7.372L8.552 8.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13"/>',
+  users:'<path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>',
+  note:'<path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/>',
+  check:'<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>'
+};
+const EVC = {info:['var(--info-50)','var(--info-600)'],warning:['var(--warning-50)','var(--warning-600)'],success:['var(--success-50)','var(--success-600)'],danger:['var(--danger-50)','var(--danger-600)'],plum:['#F0E8F8','var(--plum-500)'],neutral:['var(--nimbus)','var(--stone)']};
+function daysTo(d){return Math.round((new Date(d)-new Date('2026-06-12'))/86400000)}
+function pill(st){const s=STATUS[st];return `<span class="pill ${s.cls}">${s.label}</span>`}
+function go(nav){
+  document.querySelectorAll('.navitem').forEach(n=>n.classList.toggle('active',n.dataset.nav===nav));
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
+  document.getElementById('s-'+nav).classList.add('on');
+}
+document.querySelectorAll('.navitem').forEach(n=>n.onclick=()=>go(n.dataset.nav));
+const h=new Date().getHours();
+document.getElementById('greeting').textContent = (h<12?'Good morning':h<17?'Good afternoon':'Good evening')+', Maya';
+const active = C.filter(c=>!['70','80','120a'].includes(c.st));
+const approvals = C.filter(c=>c.appr).length;
+const expiring = C.filter(c=>{const d=daysTo(c.exp);return d>=0&&d<=90&&c.st!=='120a'});
+const inprog = C.filter(c=>['40a','40c'].includes(c.st));
+document.getElementById('stats').innerHTML = [
+  {v:active.length,l:'My active contracts',n:'contracts'},
+  {v:approvals,l:'Pending my approval',n:'contracts',attn:approvals>0},
+  {v:expiring.length,l:'Expiring within 90 days',n:'contracts'},
+  {v:inprog.length,l:'In progress with legal',n:'contracts'}
+].map(s=>`<div class="stat${s.attn?' attn':''}" onclick="go('${s.n}')"><div class="v">${s.v}</div><div class="l">${s.l}</div></div>`).join('');
+document.getElementById('queue').innerHTML =
+  '<tr><th>Contract</th><th>Vendor</th><th>Status</th><th>Updated</th></tr>' +
+  active.slice(0,7).map(c=>`<tr class="click" onclick="go('record')">
+    <td><div style="font-weight:500">${c.t}</div><div class="mono" style="color:var(--stone);margin-top:2px">${c.id}</div></td>
+    <td style="font-size:12.5px;color:var(--graphite)">${c.v}</td>
+    <td>${pill(c.st)}</td>
+    <td style="color:var(--stone);font-size:12.5px;white-space:nowrap">${c.upd}</td></tr>`).join('');
+document.getElementById('feed').innerHTML = FEED.map(e=>{const[bg,fg]=EVC[e.c];return `<div class="ev" onclick="go('record')">
+  <div class="ic" style="background:${bg};color:${fg}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">${ICONS[e.ic]}</svg></div>
+  <div><div class="tx">${e.t}</div><div class="tm">${e.m}</div></div></div>`}).join('');
+document.getElementById('expiring').innerHTML =
+  '<tr><th>Contract</th><th>Vendor</th><th>Expires</th><th>Days left</th><th>Status</th></tr>' +
+  expiring.sort((a,b)=>daysTo(a.exp)-daysTo(b.exp)).map(c=>{const d=daysTo(c.exp);const cls=d<=30?'d30':d<=60?'d60':'';
+  return `<tr class="click" onclick="go('record')">
+    <td><div style="font-weight:500">${c.t}</div><div class="mono" style="color:var(--stone);margin-top:2px">${c.id}</div></td>
+    <td style="font-size:12.5px;color:var(--graphite)">${c.v}</td>
+    <td style="white-space:nowrap">${new Date(c.exp).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</td>
+    <td><span class="days ${cls}">${d} days</span></td>
+    <td>${pill(c.st)}</td></tr>`}).join('');
+</script>
+</body>
+</html>

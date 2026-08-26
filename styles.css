@@ -22,7 +22,11 @@
   --line:var(--border-default); --accent:var(--text-link);
   --muted:var(--text-muted); --live:var(--text-feedback-success); --live-bg:var(--bg-feedback-success);
   --amber:var(--text-feedback-warning);
-  --serif:var(--font-display); --sans:var(--font-ui);
+  /* Newsreader overrides clay's --font-display. PP Editorial New was never loaded by
+     this site (no @font-face, no font file), so it only rendered on machines that had
+     it installed locally; everyone else fell back to Georgia. Set here rather than in
+     clay.css, which is generated from Figma variables and gets overwritten on export. */
+  --serif:"Newsreader",Georgia,serif; --sans:var(--font-ui);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -33,7 +37,7 @@ a{color:inherit}
 /* Nav */
 nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:color-mix(in srgb,var(--paper) 92%,transparent);z-index:50}
 nav .wrap{display:flex;justify-content:space-between;align-items:baseline;padding-top:var(--space-24);padding-bottom:var(--space-24)}
-nav .logo{font-family:var(--serif);font-size:var(--font-size-20);line-height:var(--line-height-20);font-weight:600;letter-spacing:-.02em;text-decoration:none}
+nav .logo{font-family:var(--serif);font-size:var(--font-size-16);line-height:var(--line-height-20);font-weight:400;text-transform:uppercase;letter-spacing:.14em;text-decoration:none}
 nav .links a{text-decoration:none;font-size:var(--font-size-14);margin-left:var(--space-24);opacity:.72;transition:.2s ease-out}
 nav .links a:hover,nav .links a.active{opacity:1;color:var(--accent)}
 /* Hero */

@@ -60,7 +60,25 @@
   <h2>Mapping the flow before drawing it</h2>
   <p>With the senior designer I built a flow map of the whole end-of-lease period: the triggers, every required touchpoint between Ops and the resident, and exactly where the renew-or-move-out decision sat. We reviewed the move-out paths with the PM, and where we had open questions about the real frequency and timing of outreach, we took them to the Leasing Ops leads instead of guessing.</p>
   <p>Ops surfaced the requirements that shaped the design. Because automation would absorb touchpoints they used to own, they needed visibility into each resident's progress from move-out decision to day of move. Security deposits had to support every return method: a check to a forwarding address, or direct deposit to an existing connected bank account or a new one. And two things could only be confirmed on the day itself: where the keys were left, and a photo of the space confirming it was clear of personal items.</p>
-  <!-- figure slot: end-of-lease flow map -->
+  <p>The original working boards stayed behind at Darwin, so I rebuilt the flows cleanly in FigJam. Click any diagram to view it at full size.</p>
+  <div class="flow-gallery" id="flowGallery">
+    <figure>
+      <img class="thumb" src="../assets/renewals/flow-master.svg" alt="End-of-lease master flow diagram: tracking, outreach, and the resident decision branching to renewal signing, move out, contact support, or no response">
+      <figcaption>End-of-lease master flow: from expiration tracking through the resident decision to signing, move out, support, or escalation.</figcaption>
+    </figure>
+    <figure>
+      <img class="thumb" src="../assets/renewals/flow-moveout.svg" alt="Move out flow diagram: the four touchpoints at 30, 15, and 5 days out and move out day, ending in the inspection signal">
+      <figcaption>Move out flow: the four touchpoints from flagged profile to inspection-ready signal.</figcaption>
+    </figure>
+    <figure>
+      <img class="thumb" src="../assets/renewals/flow-noresponse.svg" alt="No response flow diagram: manual outreach escalation through inspection, asked to leave, evictions, and legal">
+      <figcaption>No response flow: escalation from manual outreach through resolution, inspection, or evictions.</figcaption>
+    </figure>
+    <figure>
+      <img class="thumb" src="../assets/renewals/flow-support.svg" alt="Contact support flow diagram: outreach loop, discussion outcomes, adjusted terms via leadership, back into signing or move out">
+      <figcaption>Contact support flow: discussion outcomes routing back into signing, adjusted terms, or move out.</figcaption>
+    </figure>
+  </div>
 
   <h2>The move-out checklist: four touchpoints, progressively locked</h2>
   <p>Our first iteration, built from what Ops taught us, was a four-touchpoint cadence. Each one sent email and SMS with a link into the resident's move-out checklist:</p>
@@ -97,5 +115,33 @@
     <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
   </div>
 </footer>
+<div class="cs-lb" id="csLb" aria-hidden="true">
+  <button class="close" aria-label="Close">&#10005;</button>
+  <button class="nav prev" aria-label="Previous">&#8249;</button>
+  <button class="nav next" aria-label="Next">&#8250;</button>
+  <img alt="">
+</div>
+<script>
+(function(){
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('.flow-gallery .thumb'));
+  var lb = document.getElementById('csLb');
+  if (!thumbs.length || !lb) return;
+  var img = lb.querySelector('img');
+  var idx = 0;
+  function show(i){ idx = (i + thumbs.length) % thumbs.length; img.src = thumbs[idx].src; img.alt = thumbs[idx].alt; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); }
+  function hide(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); }
+  thumbs.forEach(function(t,i){ t.addEventListener('click', function(){ show(i); }); });
+  lb.addEventListener('click', function(e){ if (e.target === lb || e.target === img) hide(); });
+  lb.querySelector('.close').addEventListener('click', hide);
+  lb.querySelector('.prev').addEventListener('click', function(e){ e.stopPropagation(); show(idx-1); });
+  lb.querySelector('.next').addEventListener('click', function(e){ e.stopPropagation(); show(idx+1); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') show(idx-1);
+    if (e.key === 'ArrowRight') show(idx+1);
+  });
+})();
+</script>
 </body>
 </html>

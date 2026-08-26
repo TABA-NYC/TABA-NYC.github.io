@@ -68,18 +68,18 @@
   <p>I ran 45-minute card sorts with participants role-playing residents of a modern multifamily building, grouping feature cards into categories that made sense to them. Four themes emerged, in residents' own logic: <em>access I control for myself and others; things I can do in my building; things I need to know about my building; things regarding my profile, payments, and preferences.</em></p>
   <h3>IA testing, 10 participants</h3>
   <p>Using UserZoom, we tested the proposed architecture with residents of multifamily buildings: where would you expect to find a guest pass, a maintenance request, your lease? Despite some technical hiccups, the majority of tasks passed, and the failures were instructive: access history mattered less than we assumed (nested into Account), arrival notifications mattered more, and a community bulletin board ranked low enough to deprioritize entirely.</p>
-  <figure class="wide"><img src="../assets/resident-app/home-test.png" alt="De-branded home screen concept used in IA testing, with quick create actions and swipe-to-open"><figcaption>The de-branded concept we tested: quick create, swipe-to-open, and the new four-tab navigation.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/home-test.png" alt="De-branded home screen concept used in IA testing, with quick create actions and swipe-to-open"><figcaption>The de-branded concept we tested: quick create, swipe-to-open, and the new four-tab navigation.</figcaption></figure>
 
   <h2>The New Architecture</h2>
   <p>The old navigation had five tabs (Home, Visitor Access, Account, Calls, Activity), two of which existed only because the system generated calls and events, not because residents thought that way. The new model has four, mapped to the research themes: <strong>Home</strong> for high-frequency actions, <strong>Building</strong> as the new growth surface (doors, contacts, amenities, maintenance), <strong>Visitor Access</strong>, and <strong>Account</strong>. Calls and activity became notifications, where residents expected them.</p>
-  <figure class="wide"><img src="../assets/resident-app/evolution-at-a-glance.png" alt="Mobile UX evolution at a glance: how each tab evolves over time with legacy, updated, new, and evolved screens"><figcaption>The scaling plan: each tab's evolution mapped over time, so features land in the right place instead of wherever fits.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/evolution-at-a-glance.png" alt="Mobile UX evolution at a glance: how each tab evolves over time with legacy, updated, new, and evolved screens"><figcaption>The scaling plan: each tab's evolution mapped over time, so features land in the right place instead of wherever fits.</figcaption></figure>
   <p>The point of the Building tab wasn't the features it launched with; it was the ones it could absorb later without another re-architecture. The service blueprint below maps how a maintenance request flows across resident, app, staff, and systems, the kind of artifact that kept new features landing coherently.</p>
-  <figure class="wide"><img src="../assets/resident-app/service-blueprint.png" alt="Maintenance request service blueprint across resident, app, building staff, and backend systems"><figcaption>Maintenance request service blueprint: the Building tab's features were designed as services, not screens.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/service-blueprint.png" alt="Maintenance request service blueprint across resident, app, building staff, and backend systems"><figcaption>Maintenance request service blueprint: the Building tab's features were designed as services, not screens.</figcaption></figure>
 
   <h2>What Shipped</h2>
   <p>The redesigned app rolled out with the new navigation, an elevated visual system, and the first Building-tab features, with amenity reservations leading. Quick actions and customization landed on Home, where research said residents wanted control.</p>
-  <figure class="wide"><img src="../assets/resident-app/app-hero.png" alt="ButterflyMX resident app: splash screen and home screen with shortcuts and door controls"><figcaption>The shipped app: shortcuts, doors, and the patterns residents already trusted, now with room to grow.</figcaption></figure>
-  <figure><img src="../assets/resident-app/amenities.png" alt="Amenities screen with rooftop lounge, key locker, and gym listings"><figcaption>Amenity reservations: the first proof that the Building tab could carry new business lines.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/app-hero.png" alt="ButterflyMX resident app: splash screen and home screen with shortcuts and door controls"><figcaption>The shipped app: shortcuts, doors, and the patterns residents already trusted, now with room to grow.</figcaption></figure>
+  <figure><img class="zoomable" src="../assets/resident-app/amenities.png" alt="Amenities screen with rooftop lounge, key locker, and gym listings"><figcaption>Amenity reservations: the first proof that the Building tab could carry new business lines.</figcaption></figure>
 
   <h2>Reflection</h2>
   <p>The architecture outlived my tenure, which is the outcome I value most. The IA and navigation still structure the live app, the swipe-to-open pattern is still the signature interaction, and the app kept its ratings while becoming a platform. The quieter legacy: this was the project that taught the company what research buys, and the discovery process it introduced became how product work got done.</p>
@@ -96,5 +96,6 @@
     <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
   </div>
 </footer>
+<script src="../assets/lightbox.js" defer></script>
 </body>
 </html>

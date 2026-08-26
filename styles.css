@@ -79,6 +79,8 @@ nav .links a:hover,nav .links a.active{opacity:1;color:var(--accent)}
 .cs-body figure{margin:var(--space-32) 0;width:100%}
 .cs-body figure.wide{width:min(960px,calc(100vw - var(--space-64)))}
 .cs-body img{width:100%;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--bg-surface-default)}
+.cs-body img.zoomable{cursor:zoom-in;transition:.2s ease-out}
+.cs-body figure:hover img.zoomable{border-color:var(--accent)}
 .cs-body figcaption{font-size:var(--font-size-12);line-height:var(--line-height-12);color:var(--muted);margin-top:var(--space-8)}
 .outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-12);margin:var(--space-24) 0;width:min(960px,calc(100vw - var(--space-64)))}
 .outcome{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-md);padding:var(--space-16) var(--space-20)}

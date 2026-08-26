@@ -55,7 +55,10 @@
   <p>Working with engineering on where any of this could live, I kept hitting the same wall: the portal had no dedicated place for resident notifications or actions at all. Serving a renewal notification into that vacuum would bury it.</p>
   <p class="pull">The renewal notification had nowhere to live. That gap became the case for a resident dashboard: one place for maintenance requests, payments, lease information, and support, and the natural home for everything this flow needed to say.</p>
   <p>I recommended building that section, and the engineering lead saw the value and committed resources to it. The dashboard shipped as the foundation this project sat on, and it became the front door the rest of the resident experience now runs through.</p>
-  <!-- figure slot: resident dashboard -->
+  <figure class="wide">
+    <img class="zoomable" src="../assets/renewals/resident-dashboard.png" alt="Side by side comparison of the old Darwin resident portal, which opened on a payment page, and the new dashboard with an overview, action items, maintenance, and lease information">
+    <figcaption>Before and after: the portal opened on Payment and had nowhere to put a resident action. The dashboard gave notifications, action items, maintenance, payments, and lease terms one home.</figcaption>
+  </figure>
 
   <h2>Mapping the flow before drawing it</h2>
   <p>With the senior designer I built a flow map of the whole end-of-lease period: the triggers, every required touchpoint between Ops and the resident, and exactly where the renew-or-move-out decision sat. We reviewed the move-out paths with the PM, and where we had open questions about the real frequency and timing of outreach, we took them to the Leasing Ops leads instead of guessing.</p>
@@ -64,25 +67,25 @@
   <div class="flow-gallery" id="flowGallery">
     <figure>
       <div class="shot">
-        <img class="thumb" src="../assets/renewals/flow-master.png" alt="End-of-lease master flow diagram: tracking, outreach, and the resident decision branching to renewal signing, move out, contact support, or no response">
+        <img class="thumb zoomable" src="../assets/renewals/flow-master.png" alt="End-of-lease master flow diagram: tracking, outreach, and the resident decision branching to renewal signing, move out, contact support, or no response">
       </div>
       <figcaption>End-of-lease master flow: from expiration tracking through the resident decision to signing, move out, support, or escalation.</figcaption>
     </figure>
     <figure>
       <div class="shot">
-        <img class="thumb" src="../assets/renewals/flow-moveout.png" alt="Move out flow diagram: the four touchpoints at 30, 15, and 5 days out and move out day, ending in the inspection signal">
+        <img class="thumb zoomable" src="../assets/renewals/flow-moveout.png" alt="Move out flow diagram: the four touchpoints at 30, 15, and 5 days out and move out day, ending in the inspection signal">
       </div>
       <figcaption>Move out flow: the four touchpoints from flagged profile to inspection-ready signal.</figcaption>
     </figure>
     <figure>
       <div class="shot">
-        <img class="thumb" src="../assets/renewals/flow-noresponse.png" alt="No response flow diagram: manual outreach escalation through inspection, asked to leave, evictions, and legal">
+        <img class="thumb zoomable" src="../assets/renewals/flow-noresponse.png" alt="No response flow diagram: manual outreach escalation through inspection, asked to leave, evictions, and legal">
       </div>
       <figcaption>No response flow: escalation from manual outreach through resolution, inspection, or evictions.</figcaption>
     </figure>
     <figure>
       <div class="shot">
-        <img class="thumb" src="../assets/renewals/flow-support.png" alt="Contact support flow diagram: outreach loop, discussion outcomes, adjusted terms via leadership, back into signing or move out">
+        <img class="thumb zoomable" src="../assets/renewals/flow-support.png" alt="Contact support flow diagram: outreach loop, discussion outcomes, adjusted terms via leadership, back into signing or move out">
       </div>
       <figcaption>Contact support flow: discussion outcomes routing back into signing, adjusted terms, or move out.</figcaption>
     </figure>
@@ -97,10 +100,21 @@
     <li><strong>Day of move:</strong> the final two tasks, visible but locked until now, unlock: where the keys are, and the photo of the cleared space.</li>
   </ul>
   <p>With the paths agreed, I drafted the screens: what each state looked like, the interaction model, how a resident entered from a notification, and how they could navigate based on what they knew or didn't know in that moment. The checklist met people where they were instead of demanding everything at once.</p>
-  <!-- figure slot: move-out checklist states -->
+  <figure class="wide">
+    <img class="zoomable" src="../assets/renewals/moveout-checklist-web.png" alt="Move Out Checklist screen showing two incomplete tasks, a confirmed move out date, and two tasks locked until move out day, beside the forwarding address entry screen">
+    <figcaption>The checklist mid-flow: what is done, what is still open, and the two day-of tasks visibly locked. Each task opens its own short form, so a resident can give what they know and come back.</figcaption>
+  </figure>
 
   <h2>The Renewal Signing Path</h2>
   <p>The signing flow itself was shorter, and it was led by the senior designer I oversaw. Ops initiates the lease draft and gets a form prepopulated from the resident's previous lease, where they set the term options and monthly rent, and where Ops retains the right not to renew, which routes the resident down the move-out path instead. The resident gets the term options as a portal notification and has 30 days to decide. Their choice comes back to the leasing team, who draft the renewal agreement and send it through Dropbox Sign, reachable from both the portal and email. Signed, countersigned by Ops, copy delivered, active on the renewal date.</p>
+  <figure class="wide">
+    <img class="zoomable" src="../assets/renewals/renewal-banner.png" alt="Resident portal with an Attention required banner telling the resident to confirm their renewal or move out decision, with a countdown to offer expiration and a Confirm Decision button">
+    <figcaption>The entry point: an attention banner in the portal with the days left on the offer, not an email a resident has to go find.</figcaption>
+  </figure>
+  <figure class="wide">
+    <img class="zoomable" src="../assets/renewals/renewal-decision.png" alt="Resident Renewal Decision screen listing current lease terms and four new term options with monthly rents, a Best Offer flag, an option to decline renewal, and a link to submit a support request">
+    <figcaption>The decision screen: current terms on top, the priced options Ops set, and two honest exits, decline to renew or ask for something else.</figcaption>
+  </figure>
   <p>Directing that work surfaced a leadership moment I'd point to: the senior designer had room to be creative, and early on he kept inventing components and sizes that already existed in our design system. I was good at catching it visually, and every comment pointed to the component we already had rather than just flagging the deviation. Over time the new-component count in his mocks fell to almost nothing, because he'd learned the library, not because I was policing it.</p>
 
   <h2>Engineering in the room from day one</h2>
@@ -123,38 +137,6 @@
     <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
   </div>
 </footer>
-<div class="cs-lb" id="csLb" aria-hidden="true">
-  <button class="close" aria-label="Close">&#10005;</button>
-  <button class="nav prev" aria-label="Previous">&#8249;</button>
-  <button class="nav next" aria-label="Next">&#8250;</button>
-  <img alt="">
-</div>
-<script>
-(function(){
-  var thumbs = Array.prototype.slice.call(document.querySelectorAll('.flow-gallery .thumb'));
-  var lb = document.getElementById('csLb');
-  if (!thumbs.length || !lb) return;
-  var img = lb.querySelector('img');
-  var idx = 0;
-  var FIT = 2100;
-  function sizeImg(){ var n = img.naturalWidth; if (!n) return; img.style.width = (lb.classList.contains('zoom') ? n : Math.min(FIT, n)) + 'px'; }
-  img.addEventListener('load', sizeImg);
-  function show(i){ idx = (i + thumbs.length) % thumbs.length; img.src = thumbs[idx].src; img.alt = thumbs[idx].alt; lb.classList.remove('zoom'); sizeImg(); lb.scrollTop = 0; lb.scrollLeft = 0; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); }
-  function hide(){ lb.classList.remove('open'); lb.classList.remove('zoom'); lb.setAttribute('aria-hidden','true'); }
-  thumbs.forEach(function(t,i){ t.addEventListener('click', function(){ show(i); }); });
-  lb.addEventListener('click', function(e){ if (e.target === lb) hide(); });
-  img.addEventListener('click', function(e){ e.stopPropagation(); lb.classList.toggle('zoom'); sizeImg(); });
-  lb.querySelector('.close').addEventListener('click', hide);
-  lb.querySelector('.prev').addEventListener('click', function(e){ e.stopPropagation(); show(idx-1); });
-  lb.querySelector('.next').addEventListener('click', function(e){ e.stopPropagation(); show(idx+1); });
-  document.addEventListener('keydown', function(e){
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') hide();
-    if (e.key === 'z' || e.key === 'Z') { lb.classList.toggle('zoom'); sizeImg(); }
-    if (e.key === 'ArrowLeft') show(idx-1);
-    if (e.key === 'ArrowRight') show(idx+1);
-  });
-})();
-</script>
+<script src="../assets/lightbox.js" defer></script>
 </body>
 </html>

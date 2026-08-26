@@ -56,15 +56,6 @@
   </div>
   <p>Time from a prospect's first interest to a signed lease dropped by four days, homes started leasing in under 30 days, and the leasing team stopped running its day out of spreadsheets and third-party dashboards.</p>
 
-  <!-- RESTORE WHEN prototypes/leasing-crm/ EXISTS:
-<a class="proto-cta" href="../prototypes/leasing-crm/index.html">
-    <span>
-      <span class="t">Try the working prototype</span>
-      <span class="s" style="display:block">A coded, clickable version of the rebuilt CRM: list view, prospect detail, pipeline, and activity log. Real interactions, sample data.</span>
-    </span>
-    <span class="go">Open prototype →</span>
-  </a>
--->
 
   <h2>Context</h2>
   <p>Darwin Homes manages single-family rentals for institutional owners. Thousands of homes across a dozen markets, each one listed, toured, applied for, and leased through our platform. When the company moved upmarket from retail landlords with a handful of houses to institutional portfolios with thousands, the leasing CRM was the first thing to break. It had been built for the small end of the market, and it showed.</p>
@@ -73,7 +64,7 @@
   <h2>The Problem</h2>
   <p>The flaw was structural. A record was created every time somebody inquired about a home, so the system was organized around properties, not people. One prospect interested in two houses became two unrelated records, each with half the story. Everything else followed from that.</p>
 
-  <figure class="wide"><img src="../assets/leasing-crm/before-detail.png" alt="The old prospect detail page with a raw system timeline"><figcaption>The old prospect record. A phone call arrived as a pasted block of text, sitting in the same undifferentiated feed as "Robot Darwin updated Resident Prospect."</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/leasing-crm/before-detail.png" alt="The old prospect detail page with a raw system timeline"><figcaption>The old prospect record. A phone call arrived as a pasted block of text, sitting in the same undifferentiated feed as "Robot Darwin updated Resident Prospect."</figcaption></figure>
 
   <ul>
     <li><strong>Status carried no information.</strong> Sixteen thousand records, all marked Open, with actual progress buried in a text field. There was no way to sort by urgency, because nothing in the data expressed urgency.</li>
@@ -120,15 +111,15 @@
 
   <h3>One view of a person</h3>
   <p>The overview tab leads with progress and the dates behind each stage, and the right rail holds context: prospect details, pre-screen results, listing details, and every related inquiry that person has open. Six related inquiries in the example below, which under the old model would have been six separate records nobody connected.</p>
-  <figure class="wide"><img src="../assets/leasing-crm/after-detail-overview.png" alt="Rebuilt inquiry detail page, overview tab"><figcaption>Dynamic pipeline information leads. Reference data supports it from the rail.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/leasing-crm/after-detail-overview.png" alt="Rebuilt inquiry detail page, overview tab"><figcaption>Dynamic pipeline information leads. Reference data supports it from the rail.</figcaption></figure>
 
   <h3>An activity log you can actually read</h3>
   <p>The old timeline dumped system events and pasted call notes into one undifferentiated feed. The rebuilt log separates communications, notes, and events, shows the full note inline instead of hiding it behind an expand, and surfaces the latest note in both the table and the overview tab. It also fixed a bug where notes only appeared under the Activity filter, which meant agents had been failing to find notes that were there the whole time.</p>
-  <figure class="wide"><img src="../assets/leasing-crm/activity-feed-expanded.png" alt="Activity log with expanded communication details"><figcaption>Every message, with its channel, type, and trigger, in one thread.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/leasing-crm/activity-feed-expanded.png" alt="Activity log with expanded communication details"><figcaption>Every message, with its channel, type, and trigger, in one thread.</figcaption></figure>
 
   <h3>Communications Inside the Record</h3>
   <p>Phase two brought email, SMS, and calls into the inquiry itself, auto-linked back to the right prospect and listing. It removed the round trip through external ticketing and the manual step of coding a conversation back to a record, which in practice simply got skipped. I designed and specced phases two and three; they shipped after I left.</p>
-  <figure class="wide"><img src="../assets/leasing-crm/after-comms.png" alt="Composing an email directly inside the inquiry record"><figcaption>Composing from the record, with the full history sitting behind it.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/leasing-crm/after-comms.png" alt="Composing an email directly inside the inquiry record"><figcaption>Composing from the record, with the full history sitting behind it.</figcaption></figure>
 
   <h2>Scope Discipline</h2>
   <p>A short release with a hard date is mostly a series of small refusals. A few from the planning log:</p>
@@ -156,5 +147,6 @@
     <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
   </div>
 </footer>
+<script src="../assets/lightbox.js" defer></script>
 </body>
 </html>

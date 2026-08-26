@@ -38,8 +38,8 @@
 </header>
 
 <main class="cs-body wrap">
-  <h2>Outcomes first</h2>
-  <div class="outcomes" style="width:min(960px,100%)">
+  <h2>Outcomes</h2>
+  <div class="outcomes">
     <div class="outcome"><b>~99%</b><span>of the global fleet on the new UI: 5,166 buildings</span></div>
     <div class="outcome"><b>8-phase</b><span>migration, HQ pilot to international</span></div>
     <div class="outcome"><b>−24%</b><span>screen-issue tickets in 6 months, saving ~$80–100K a year in installer dispatches</span></div>
@@ -50,20 +50,20 @@
   <h2>Context</h2>
   <p>Reliability had become a top company priority: connectivity, performance, and usability across a growing fleet of intercoms. The initiative had three workstreams: software stability, updated hardware, and the UI. Design owned the third. The catch: product wanted to move fast and rebuild the existing screens exactly as they were.</p>
 
-  <h2>The advocacy moment</h2>
+  <h2>The Advocacy Moment</h2>
   <p>The existing UI had problems a rebuild would simply preserve: inconsistent styles and components, poor contrast, confusing flows for simple interactions, and almost no visibility of system status, at a touchscreen where every user is a first-time user. Rebuilding it 1:1 meant paying the full engineering cost and keeping every usability debt.</p>
   <p class="pull">Since every screen had to be rebuilt from scratch anyway, better UI was nearly free: the same components, built once, just designed right. That was the case I brought to the stakeholder review.</p>
   <p>We had one week to make it. I ran a heuristic evaluation across every intercom screen. The team laid them all out, annotated issues as a group, and walked leadership through what the current UI actually looked like up close: contrast failures, inconsistent type and icons, wasted space, missing affordances. Leadership bought in. Design got its window, bounded by one rule: no impact to the delivery timeline.</p>
 
   <h2>Process</h2>
-  <h3>Components before screens</h3>
+  <h3>Components Before Screens</h3>
   <p>To guarantee consistency at speed, we inverted the usual order: identify and design every component style first, then assemble screens. With shared components agreed, three designers could divide and conquer the screen inventory without divergence. I took the making-a-call flow, Virtual Key, and the leasing office screens, and collaborated with Yahya on the home screen, where the concepts I brought to our working sessions became the shipped direction.</p>
-  <h3>Moodboard to system</h3>
+  <h3>Moodboard to System</h3>
   <p>We aligned on direction using the company's brand values as evaluation criteria, exploring layout, color, sizing, and type against them rather than personal taste.</p>
   <h3>The Monarch style guide and component library</h3>
   <p>The lasting artifact of the redesign is the system underneath it. Identifying every component style before any screen work meant the screens assembled themselves from one agreed kit, and that kit became the Monarch style guide and component library: type, color, iconography, spacing, and the interactive components every screen shares. It established the update path for the 7" intercom line, a design QA process with engineering and product that outlived the project, and an onboarding surface solid enough that a brand-new engineering team ramped onto the intercom without design hand-holding.</p>
 
-  <h2>Before and after</h2>
+  <h2>Before and After</h2>
   <figure class="wide"><img src="../assets/intercom/before-home.png" alt="Old intercom home screen with inconsistent outlined icon cards and low-visibility door status"><figcaption>Before: thin outlined tiles, inconsistent iconography, door status buried in a small text strip.</figcaption></figure>
   <figure class="wide"><img src="../assets/intercom/after-home.png" alt="Redesigned Monarch home screen with clear action grid and prominent locked status"><figcaption>After: a confident action grid, consistent components, and door state promoted to a first-class, glanceable status.</figcaption></figure>
 
@@ -82,7 +82,7 @@
   <h2>Rollout</h2>
   <p>The new UI shipped as a cross-platform Electron app (Windows, Linux, Mac) through an 8-phase migration, starting with the HQ building, expanding ring by ring to international properties. The base UI reached 4,908 buildings (~93% of the fleet), rising to 5,166 buildings (~99%) with peripheral support. A new engineering team was onboarded mid-rollout using the Monarch style guide, and the design-QA process we established with engineering became standard for intercom work after the project.</p>
 
-  <h2>Where it is today</h2>
+  <h2>Where It Is Today</h2>
   <p>The current generation of the intercom carries this design language forward. The welcome screen now greets visitors on every panel, including the newest 8" hardware, and the status-state system (door locked/unlocked, method confirmation) remains the interaction backbone of the shipping product.</p>
   <figure class="wide"><img src="../assets/intercom/today-welcome-photo.png" alt="Visitor tapping the welcome screen on a current-generation intercom"><figcaption>The current-generation intercom, welcome screen active: the screensaver concept, still on duty.</figcaption></figure>
   <figure class="wide"><img src="https://butterflymx.com/wp-content/uploads/2021/11/11-surface-video-intercom-butterflymx.jpg" alt="12-inch surface intercom installed beside a glass entry door, showing the unlocked status chip and action grid"><figcaption>The 12" surface intercom in the field: unlocked status chip, action grid, and directory. The architecture from this project, evolved.</figcaption></figure>

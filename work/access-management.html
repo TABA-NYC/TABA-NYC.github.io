@@ -38,8 +38,8 @@
 </header>
 
 <main class="cs-body wrap">
-  <h2>Outcomes first</h2>
-  <div class="outcomes" style="width:min(960px,100%)">
+  <h2>Outcomes</h2>
+  <div class="outcomes">
     <div class="outcome"><b>6,529</b><span>buildings (100% of the fleet) live with permission groups at launch</span></div>
     <div class="outcome"><b>76%</b><span>of multi-zone properties created added access groups</span></div>
     <div class="outcome"><b>95%</b><span>task-completion rate in usability testing</span></div>
@@ -50,16 +50,16 @@
   <h2>Context</h2>
   <p>ButterflyMX's operating system was built around one job: getting people through the front door with a smart video intercom. The roadmap, though, was to control far more of the building, additional doors, amenities, elevators, and back-of-house spaces. That meant the system needed a real model for access: who can go where, and when.</p>
 
-  <h2>The problem</h2>
+  <h2>The Problem</h2>
   <p>Access was managed by "zones." Zones were created to separate access at the building or location level, so a property with two intercoms for two buildings kept each building's residents to their own door. But most properties had a single zone, and a zone couldn't describe anything finer than the whole building. There was no way to control individual areas inside a property, and no way to set permissions at the level of a person or a role. We needed property managers to be able to give the right people access to the right areas at the right times.</p>
 
   <h2>My role and the ground truth</h2>
   <p>This was my first project with our sole product manager, and a chance to be the new person and learn the access-control space from the ground up. I worked with our Technical Project and Installation teams to understand how zones were actually wired in the field, and with Client Success to understand how property managers thought about access and where the current setup hurt. That grounding gave us the user stories to design against.</p>
 
-  <h3>Competitive analysis</h3>
+  <h3>Competitive Analysis</h3>
   <p>New to proptech, I studied how Latch, PDK, and Kisi handled access control. A clear pattern emerged: permission groups were organized around the role or type of person tied to the building, residents, security, maintenance, and service providers like delivery and internet techs. Each group was essentially a set of doors, a set of time constraints, and the people assigned to it. That shape informed the flows we built.</p>
 
-  <h2>User stories and flows</h2>
+  <h2>User Stories and Flows</h2>
   <p>A handful of concrete stories kept the work honest:</p>
   <ul>
     <li>As a tenant, I want to use my phone to access the roof, so I have the same convenience there that I have at the front door.</li>
@@ -81,18 +81,18 @@
   <p>Property managers expected to group access by role, and they valued having one centralized place to manage doors and the people who could open them. Every participant finished the flow, and 100% said the experience beat their current tool.</p>
   <p>The testing also showed where the model leaked. People expected checkboxes to be interactive for adding users, wanted a separate view of who had already been added, reached for search to find people, and tripped over some of our taxonomy and icons. Those became the next round of fixes.</p>
 
-  <h2>What shipped</h2>
+  <h2>What Shipped</h2>
   <p>The final design centered on a clear groups list and an edit panel where a manager builds a group from three things: the doors it covers, the time window for each, and the people in it. Stage, status, and access all read from one place instead of being scattered across the building's setup.</p>
   <figure class="wide"><img src="../assets/access-management/screen-3.webp" alt="Final screens: the groups list, the access matrix view, and the edit-group panel"><figcaption>The shipped experience: the groups list, the access overview, and the edit-group panel where doors, time windows, and people come together.</figcaption></figure>
 
-  <h2>Constraints we built against</h2>
+  <h2>Constraints We Built Against</h2>
   <p>We shipped this without much of a safety net: no established design system, a front end on Bootstrap 3, a team of mostly back-end engineers, and a single front-end developer shared across projects. A good part of the job was advocating for the UX and the interactions over whatever the framework made easy.</p>
 
   <h2>Outcomes</h2>
   <p>Permission groups launched across the entire fleet and was announced publicly soon after. All 6,529 buildings (100%) went live with access management, every property carrying at least one default group, so single-zone buildings transitioned with no action required from the manager. Of the 421 properties running more than one zone, 322 (76%) created at least one additional group to set up differentiated access.</p>
   <p>Property managers organized their groups in ways we expected and a few we did not: by building or location, by floor, by restricted or staff-only access, commercial versus residential, and by paid amenity.</p>
 
-  <h2>Why it mattered</h2>
+  <h2>Why It Mattered</h2>
   <p>Permission groups were the foundation that let ButterflyMX grow past the intercom. With access modeled around people, doors, and time, the platform could add keypads, smart locks, elevator controls, and key lockers and have a coherent place to put them. It made the whole product line more useful, and a great deal stickier for the buildings that ran on it.</p>
 
   <div class="next-prev">

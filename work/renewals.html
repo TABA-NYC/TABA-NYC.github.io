@@ -63,19 +63,27 @@
   <p>The original working boards stayed behind at Darwin, so I rebuilt the flows cleanly in FigJam. Click any diagram to view it at full size.</p>
   <div class="flow-gallery" id="flowGallery">
     <figure>
-      <img class="thumb" src="../assets/renewals/flow-master.svg" alt="End-of-lease master flow diagram: tracking, outreach, and the resident decision branching to renewal signing, move out, contact support, or no response">
+      <div class="shot">
+        <img class="thumb" src="../assets/renewals/flow-master.png" alt="End-of-lease master flow diagram: tracking, outreach, and the resident decision branching to renewal signing, move out, contact support, or no response">
+      </div>
       <figcaption>End-of-lease master flow: from expiration tracking through the resident decision to signing, move out, support, or escalation.</figcaption>
     </figure>
     <figure>
-      <img class="thumb" src="../assets/renewals/flow-moveout.svg" alt="Move out flow diagram: the four touchpoints at 30, 15, and 5 days out and move out day, ending in the inspection signal">
+      <div class="shot">
+        <img class="thumb" src="../assets/renewals/flow-moveout.png" alt="Move out flow diagram: the four touchpoints at 30, 15, and 5 days out and move out day, ending in the inspection signal">
+      </div>
       <figcaption>Move out flow: the four touchpoints from flagged profile to inspection-ready signal.</figcaption>
     </figure>
     <figure>
-      <img class="thumb" src="../assets/renewals/flow-noresponse.svg" alt="No response flow diagram: manual outreach escalation through inspection, asked to leave, evictions, and legal">
+      <div class="shot">
+        <img class="thumb" src="../assets/renewals/flow-noresponse.png" alt="No response flow diagram: manual outreach escalation through inspection, asked to leave, evictions, and legal">
+      </div>
       <figcaption>No response flow: escalation from manual outreach through resolution, inspection, or evictions.</figcaption>
     </figure>
     <figure>
-      <img class="thumb" src="../assets/renewals/flow-support.svg" alt="Contact support flow diagram: outreach loop, discussion outcomes, adjusted terms via leadership, back into signing or move out">
+      <div class="shot">
+        <img class="thumb" src="../assets/renewals/flow-support.png" alt="Contact support flow diagram: outreach loop, discussion outcomes, adjusted terms via leadership, back into signing or move out">
+      </div>
       <figcaption>Contact support flow: discussion outcomes routing back into signing, adjusted terms, or move out.</figcaption>
     </figure>
   </div>
@@ -128,16 +136,21 @@
   if (!thumbs.length || !lb) return;
   var img = lb.querySelector('img');
   var idx = 0;
-  function show(i){ idx = (i + thumbs.length) % thumbs.length; img.src = thumbs[idx].src; img.alt = thumbs[idx].alt; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); }
-  function hide(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); }
+  var FIT = 2100;
+  function sizeImg(){ var n = img.naturalWidth; if (!n) return; img.style.width = (lb.classList.contains('zoom') ? n : Math.min(FIT, n)) + 'px'; }
+  img.addEventListener('load', sizeImg);
+  function show(i){ idx = (i + thumbs.length) % thumbs.length; img.src = thumbs[idx].src; img.alt = thumbs[idx].alt; lb.classList.remove('zoom'); sizeImg(); lb.scrollTop = 0; lb.scrollLeft = 0; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); }
+  function hide(){ lb.classList.remove('open'); lb.classList.remove('zoom'); lb.setAttribute('aria-hidden','true'); }
   thumbs.forEach(function(t,i){ t.addEventListener('click', function(){ show(i); }); });
-  lb.addEventListener('click', function(e){ if (e.target === lb || e.target === img) hide(); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) hide(); });
+  img.addEventListener('click', function(e){ e.stopPropagation(); lb.classList.toggle('zoom'); sizeImg(); });
   lb.querySelector('.close').addEventListener('click', hide);
   lb.querySelector('.prev').addEventListener('click', function(e){ e.stopPropagation(); show(idx-1); });
   lb.querySelector('.next').addEventListener('click', function(e){ e.stopPropagation(); show(idx+1); });
   document.addEventListener('keydown', function(e){
     if (!lb.classList.contains('open')) return;
     if (e.key === 'Escape') hide();
+    if (e.key === 'z' || e.key === 'Z') { lb.classList.toggle('zoom'); sizeImg(); }
     if (e.key === 'ArrowLeft') show(idx-1);
     if (e.key === 'ArrowRight') show(idx+1);
   });

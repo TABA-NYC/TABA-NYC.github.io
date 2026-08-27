@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renewals &amp; resident departure · Tyler Pruyn</title>
 <meta name="description" content="Automating the end-of-lease moment at Darwin Homes: a resident dashboard, a four-touchpoint move-out flow, and a renewal signing path that saved Ops for the exceptions.">
-<link rel="preload" href="../assets/fonts/inter-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../assets/fonts/newsreader-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/fonts/inter.css">
-<link rel="stylesheet" href="../assets/fonts/newsreader.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../clay.css">
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -93,24 +91,6 @@
     </figure>
   </div>
 
-  <h2>The move-out checklist: four touchpoints, progressively locked</h2>
-  <p>Our first iteration, built from what Ops taught us, was a four-touchpoint cadence. Each one sent email and SMS with a link into the resident's move-out checklist:</p>
-  <ul>
-    <li><strong>30 days out:</strong> first contact. The checklist opens, asking for the day of the move, a forwarding address, and how they want their security deposit returned.</li>
-    <li><strong>15 days out:</strong> confirm what's there, fill in what wasn't known yet. Tasks were deliberately flexible: residents could give the information they had and come back for the rest, like a forwarding address they didn't have yet.</li>
-    <li><strong>5 days out:</strong> the move-out date locks and can no longer be edited. Last confirmation before the day.</li>
-    <li><strong>Day of move:</strong> the final two tasks, visible but locked until now, unlock: where the keys are, and the photo of the cleared space.</li>
-  </ul>
-  <p>With the paths agreed, I drafted the screens: what each state looked like, the interaction model, how a resident entered from a notification, and how they could navigate based on what they knew or didn't know in that moment. The checklist met people where they were instead of demanding everything at once.</p>
-  <figure class="wide">
-    <img class="zoomable" src="../assets/renewals/moveout-checklist-web.png" alt="Move Out Checklist screen showing two incomplete tasks, a confirmed move out date, and two tasks locked until move out day, beside the forwarding address entry screen">
-    <figcaption>The checklist mid-flow: what is done, what is still open, and the two day-of tasks visibly locked. Each task opens its own short form, so a resident can give what they know and come back.</figcaption>
-  </figure>
-  <figure>
-    <img class="zoomable" src="../assets/renewals/moveout-mobile.png" alt="A text message from Darwin Homes telling the resident their move out date is in 15 days with a link to the checklist, beside the mobile dashboard showing a matching Action Items card that reads confirm your move out information, 15 days away">
-    <figcaption>How a touchpoint actually reached someone: a text with a link, landing on a dashboard where the same request is waiting. The message and the action item say the same thing, so arriving from either one starts in the same place.</figcaption>
-  </figure>
-
   <h2>The Renewal Signing Path</h2>
   <p>The signing flow itself was shorter, and it was led by the senior designer I oversaw. Ops initiates the lease draft and gets a form prepopulated from the resident's previous lease, where they set the term options and monthly rent, and where Ops retains the right not to renew, which routes the resident down the move-out path instead. The resident gets the term options as a portal notification and has 30 days to decide. Their choice comes back to the leasing team, who draft the renewal agreement and send it through Dropbox Sign, reachable from both the portal and email. Signed, countersigned by Ops, copy delivered, active on the renewal date.</p>
   <figure class="wide">
@@ -122,6 +102,24 @@
     <figcaption>Both sides of the fork on one screen. Choosing a term moves the resident toward signing; choosing not to renew opens the move-out questions right there, which is where the move-out flow picks up and where Ops gets the reason.</figcaption>
   </figure>
   <p>Directing that work surfaced a leadership moment I'd point to: the senior designer had room to be creative, and early on he kept inventing components and sizes that already existed in our design system. I was good at catching it visually, and every comment pointed to the component we already had rather than just flagging the deviation. Over time the new-component count in his mocks fell to almost nothing, because he'd learned the library, not because I was policing it.</p>
+
+  <h2>The move-out checklist: four touchpoints, progressively locked</h2>
+  <p>Residents who declined the terms moved onto the move-out path, and that path was the heavier half of the work. Our first iteration, built from what Ops taught us, was a four-touchpoint cadence. Each one sent email and SMS with a link into the resident's move-out checklist:</p>
+  <ul>
+    <li><strong>30 days out:</strong> first contact. The checklist opens, asking for the day of the move, a forwarding address, and how they want their security deposit returned.</li>
+    <li><strong>15 days out:</strong> confirm what's there, fill in what wasn't known yet. Tasks were deliberately flexible: residents could give the information they had and come back for the rest, like a forwarding address they didn't have yet.</li>
+    <li><strong>5 days out:</strong> the move-out date locks and can no longer be edited. Last confirmation before the day.</li>
+    <li><strong>Day of move:</strong> the final two tasks, visible but locked until now, unlock: where the keys are, and the photo of the cleared space.</li>
+  </ul>
+  <p>With the paths agreed, I drafted the screens: what each state looked like, the interaction model, how a resident entered from a notification, and how they could navigate based on what they knew or didn't know in that moment. The checklist met people where they were instead of demanding everything at once.</p>
+  <figure class="wide">
+    <img class="zoomable" src="../assets/renewals/moveout-checklist.png" alt="Four mobile screens: the Move Out Checklist with three incomplete tasks and two tasks locked until move out day, then each task opened in turn as a date picker for the expected move out date, a forwarding address form, and a security deposit refund method with ACH selected and a connected bank account">
+    <figcaption>The checklist and the three tasks behind it. Each one opens as its own short form, so a resident can answer what they know now and come back for the rest. The two day-of tasks sit visible but locked at the bottom, which is how someone knows what is still coming.</figcaption>
+  </figure>
+  <figure>
+    <img class="zoomable" src="../assets/renewals/moveout-mobile.png" alt="A text message from Darwin Homes telling the resident their move out date is in 15 days with a link to the checklist, beside the mobile dashboard showing a matching Action Items card that reads confirm your move out information, 15 days away">
+    <figcaption>How a touchpoint actually reached someone: a text with a link, landing on a dashboard where the same request is waiting. The message and the action item say the same thing, so arriving from either one starts in the same place.</figcaption>
+  </figure>
 
   <h2>Engineering in the room from day one</h2>
   <p>This was one of the projects where I brought engineering in as early as possible. Concepts got reviewed at standup; more polished passes went over as annotated files; early thinking got walked through as rough flows. Engineers would sit with it, then ping me in Slack or grab an ad-hoc call about an interaction I hadn't accounted for. We kept a dedicated design-eng Slack group for exactly that traffic, and I added engineers as optional to the Ops calls, summarizing findings at standup for anyone who couldn't make it. By the time screens were final, nothing in them was a surprise.</p>

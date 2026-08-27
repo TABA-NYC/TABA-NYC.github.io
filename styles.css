@@ -9,7 +9,7 @@
    obsidian recipe via color-mix over neutral-900.
 
    CANDIDATE TOKEN GAPS (per repo rule these belong in Figma, then re-export; kept as literals until then):
-   measure/container widths 1160, 980, 960, 880, 680, 580; media query breakpoints 820, 560;
+   measure/container widths 1024 (container, = the 960 content measure plus its 32 gutters), 960, 880, 680, 580; media query breakpoints 820, 560;
    display-face tracking (-.015em to -.025em); 1px hairline and 3px accent border widths;
    fluid hero line-height ratios 1.13 and 1.17 (the 60/68 and 48/56 token ratios applied to clamp sizes);
    motion 200ms ease-out is the spec's duration/base, not yet an exported token;
@@ -33,7 +33,7 @@ html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;font-size:var(--font-size-16);line-height:var(--line-height-16)}
 a{color:inherit}
 :where(a,button,summary):focus-visible{outline:none;box-shadow:0 0 0 3px var(--focus-ring);border-radius:var(--radius-xs)}
-.wrap{max-width:1160px;margin:0 auto;padding:0 var(--space-32)}
+.wrap{max-width:1024px;margin:0 auto;padding:0 var(--space-32)}
 /* Nav */
 nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:color-mix(in srgb,var(--paper) 92%,transparent);z-index:50}
 nav .wrap{display:flex;justify-content:space-between;align-items:baseline;padding-top:var(--space-24);padding-bottom:var(--space-24)}
@@ -42,7 +42,7 @@ nav .links a{text-decoration:none;font-size:var(--font-size-14);margin-left:var(
 nav .links a:hover,nav .links a.active{opacity:1;color:var(--accent)}
 /* Hero */
 .hero{padding:calc(var(--space-64) + var(--space-40)) 0 calc(var(--space-64) + var(--space-8))}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(var(--font-size-40),6vw,var(--font-size-60));line-height:1.13;letter-spacing:-.025em;max-width:980px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(var(--font-size-40),6vw,var(--font-size-60));line-height:1.13;letter-spacing:-.025em;max-width:100%}
 .hero h1 em{font-style:italic;color:var(--accent)}
 .hero .sub{margin-top:var(--space-24);font-size:var(--font-size-18);line-height:var(--line-height-18);color:var(--muted);max-width:580px}
 .metrics{display:flex;flex-wrap:wrap;gap:0;margin-top:var(--space-48);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--card)}
@@ -70,7 +70,7 @@ nav .links a:hover,nav .links a.active{opacity:1;color:var(--accent)}
 .cs-hero .kicker{font-size:var(--font-size-12);line-height:var(--line-height-12);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:var(--space-16)}
 .cs-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(var(--font-size-32),4.6vw,var(--font-size-48));line-height:1.17;letter-spacing:-.02em;max-width:880px}
 .cs-hero .lede{margin-top:var(--space-24);font-size:var(--font-size-20);line-height:var(--line-height-20);color:var(--muted);max-width:680px}
-.cs-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-24);max-width:980px;margin-top:var(--space-40);font-size:var(--font-size-12);line-height:var(--line-height-12);color:var(--muted)}
+.cs-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-24);margin-top:var(--space-40);font-size:var(--font-size-12);line-height:var(--line-height-12);color:var(--muted)}
 .cs-meta b{display:block;color:var(--ink);font-size:var(--font-size-14);line-height:var(--line-height-14);margin-bottom:var(--space-2);font-weight:600}
 .cs-body{padding-top:var(--space-64);padding-bottom:calc(var(--space-64) + var(--space-32));display:grid;grid-template-columns:minmax(0,680px);justify-content:start}
 .cs-body h2{font-family:var(--serif);font-size:var(--font-size-32);line-height:var(--line-height-32);font-weight:500;letter-spacing:-.015em;margin:var(--space-48) 0 var(--space-16)}

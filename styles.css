@@ -9,7 +9,7 @@
    obsidian recipe via color-mix over neutral-900.
 
    CANDIDATE TOKEN GAPS (per repo rule these belong in Figma, then re-export; kept as literals until then):
-   measure/container widths 1024 (container, = the 960 content measure plus its 32 gutters), 960, 880, 680, 580; media query breakpoints 820, 560;
+   measure/container widths 1024 (container, = the 960 content measure plus its 32 gutters), 960, 880, 680 (prose measure, hero sub and case lede alike); media query breakpoints 820, 560;
    display-face tracking (-.015em to -.025em); 1px hairline and 3px accent border widths;
    fluid hero line-height ratios 1.13 and 1.17 (the 60/68 and 48/56 token ratios applied to clamp sizes);
    motion 200ms ease-out is the spec's duration/base, not yet an exported token;
@@ -44,7 +44,7 @@ nav .links a:hover,nav .links a.active{opacity:1;color:var(--accent)}
 .hero{padding:calc(var(--space-64) + var(--space-40)) 0 calc(var(--space-64) + var(--space-8))}
 .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(var(--font-size-40),6vw,var(--font-size-60));line-height:1.13;letter-spacing:-.025em;max-width:100%}
 .hero h1 em{font-style:italic;color:var(--accent)}
-.hero .sub{margin-top:var(--space-24);font-size:var(--font-size-18);line-height:var(--line-height-18);color:var(--muted);max-width:580px}
+.hero .sub{margin-top:var(--space-24);font-size:var(--font-size-18);line-height:var(--line-height-18);color:var(--muted);max-width:680px}
 .metrics{display:flex;flex-wrap:wrap;gap:0;margin-top:var(--space-48);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--card)}
 .metric{flex:1;min-width:150px;padding:var(--space-20) var(--space-24);border-right:1px solid var(--line)}
 .metric:last-child{border-right:0}

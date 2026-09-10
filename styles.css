@@ -59,7 +59,7 @@ nav .links a:hover,nav .links a.active{opacity:1;color:var(--accent)}
 .row:hover .title{color:var(--accent)}
 .row .num{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:var(--font-size-14);line-height:var(--line-height-14)}
 .row .title{display:block;font-family:var(--serif);font-size:var(--font-size-28);line-height:var(--line-height-28);font-weight:500;letter-spacing:-.015em;text-wrap:balance;transition:.2s ease-out}
-.row .org{font-size:var(--font-size-12);line-height:var(--line-height-12);color:var(--muted);margin-top:var(--space-4)}
+.row .org{font-size:var(--font-size-14);line-height:var(--line-height-14);color:var(--muted);margin-top:var(--space-4)}
 .row .desc{font-size:var(--font-size-14);line-height:var(--line-height-14);color:var(--muted)}
 .badge{font-size:var(--font-size-11);line-height:var(--line-height-11);letter-spacing:.08em;text-transform:uppercase;border-radius:var(--radius-full);padding:var(--space-4) var(--space-12);white-space:nowrap;font-weight:600}
 .badge.live{color:var(--live);background:var(--live-bg);border:1px solid color-mix(in srgb,var(--live) 35%,transparent)}

@@ -82,7 +82,16 @@ nav .links a:hover,nav .links a.active{opacity:1;color:var(--accent)}
 .cs-body li{margin-bottom:var(--space-8)}
 .cs-body .pull{font-family:var(--serif);font-size:var(--font-size-24);line-height:var(--line-height-24);font-style:italic;border-left:3px solid var(--accent);padding-left:var(--space-24);margin:var(--space-32) 0;color:var(--ink)}
 .cs-body figure{margin:var(--space-32) 0;width:100%}
-.cs-body figure.wide{width:min(960px,calc(100vw - var(--space-64)))}
+/* Figures stay inside the text measure. The body is a 680px column set to
+   justify-content:start, so a wider figure could only overflow to the right,
+   which gave the page two different right edges and an off-centre feel. */
+.cs-body figure.wide{width:100%}
+/* A sequence of states reads left to right, not as a stack. Each frame stays its
+   own <figure> so the lightbox opens one panel, never the whole row. */
+.cs-body .fig-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-16);margin:var(--space-32) 0;align-items:start}
+.cs-body .fig-row figure{margin:0;width:100%}
+/* Small assets render at their own size rather than being stretched to the column. */
+.cs-body figure.natural img{width:auto;max-width:100%}
 .cs-body img{width:100%;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--bg-surface-default)}
 .cs-body img.zoomable{cursor:zoom-in;transition:.2s ease-out}
 .cs-body figure:hover img.zoomable{border-color:var(--accent)}

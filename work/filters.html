@@ -55,13 +55,14 @@
   </div>
 
   <h2>Context</h2>
-  <p>Every surface had its own filters. The biggest had none. On Records, operators would search spreadsheets for record IDs and paste them into URLs to reach a unit detail page. Where filters existed they were static dropdowns: no multi-select, no overflow handling, no persistence, and every surface did it differently. Leadership's take: "make it work like Ramp."</p>
+  <p>Every surface had its own filters. The biggest had none. On Records, operators would search spreadsheets for record IDs and paste them into URLs to reach a unit detail page. Where filters existed they were static dropdowns: no multi-select, no overflow handling, and every surface did it differently. Nothing you set survived navigating away, so operators rebuilt the same search all day. Leadership's take: "make it work like Ramp."</p>
 
   <figure class="wide"><img class="zoomable" src="../assets/filters/before-pair.png" alt="Two before states in the old platform: the Turn Requests page with two rows of static dropdown filters, and the Records Units page with only a cascading selector bar and no filters at all"><figcaption>Two surfaces, two answers. Turn Requests had a wall of static dropdowns. Records had nothing, which is why operators pasted record IDs into the URL.</figcaption></figure>
 
   <h2>Attempt one: research said one thing, the room wanted Ramp</h2>
   <p>I ran the initial research with a junior designer: a current-state study of internal operators, pattern exploration across comparable products, and a proposal that was modest, learnable, and shaped around operator mental models and engineering effort.</p>
   <p>The proposal was overruled in favor of the Ramp-style combined field. It shipped only inside the Acquisition Portal, and when that project was shelved, the pattern died with it. The pitfalls we had flagged were real: every click in a multi-select closed the menu, real-time filtering lagged at our volumes, and the mental model was foreign to operators.</p>
+  <figure class="wide"><img class="zoomable" src="../assets/filters/findfilter-sequence.png" alt="Three states of the Find and Filter pattern: one combined field at rest, its cascading menu listing Market, Status, Stage and Assignee, and the Assignee list drilled into with two names checked"><figcaption>Find &amp; Filter as it shipped in the Acquisition Portal: one combined field, a cascading menu, and a trip in and back out for every value you wanted.</figcaption></figure>
   <p>One piece of it was worth keeping. The filter pills were my design, and when the problem came back around I brought them with me. Everything else we built and tested fresh.</p>
 
   <h2>Attempt two: the problem came back with leverage</h2>
@@ -88,12 +89,14 @@
     <li>Multi-select stays open: checkboxes, not one-click-and-close.</li>
     <li>Apply shows its consequences: the result count sits on the button before you commit.</li>
     <li>Edit from the pill: applied filters are interactive, not just labels.</li>
-    <li>Built to scale with the page: counts rather than values in pills, +N overflow, search inside big filters.</li>
+    <li>Built to scale with the page: counts rather than values in pills, +N overflow, search inside big filters. One chip per value had already filled the row at four filters, so pills count instead of naming.</li>
     <li>Views that stick: a default auto-applies on login, and any view is shareable by link.</li>
   </ul>
+  <p>The persistence decision was the one worth arguing about. We could have remembered whatever filters you left applied, which is the cheaper build and the thing people ask for first. We went with a view you define on purpose instead. A default returns you to your baseline, the search you actually start from, rather than to the tail end of whatever you were digging through yesterday.</p>
   <figure class="wide"><img class="zoomable" src="../assets/filters/after-bills.png" alt="Bills 2.0 with Status and Owner filters applied as blue pills, a showing 112 items count, the All Filters control, and the saved view selector"><figcaption>Bills 2.0: applied filters stay visible as pills, the result count sits up front, and the view selector holds the whole arrangement.</figcaption></figure>
   <figure class="wide"><img class="zoomable" src="../assets/filters/all-filters-sequence.png" alt="Six states of the All Filters menu as Status and Owner checkboxes are selected, with the Apply button count moving from 1,090 results down to 112"><figcaption>The menu stays open while you work, and Apply shows its consequences: the count updates on the button before you commit to anything.</figcaption></figure>
   <figure class="wide"><img class="zoomable" src="../assets/filters/pill-edit.png" alt="Bills 2.0 with an applied Status pill expanded in place into a checkbox list showing Not Posted and Posted selected, above an Apply button reading 112 results"><figcaption>An applied filter is a control, not a label. Click the pill and it opens where it sits.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/filters/findfilter-vs-pills.png" alt="The Acquisition Portal filter row above the Bills 2.0 filter row: the first shows five chips each naming one value, the second shows the same kind of selection as two pills reading Bill Status 2 and Owner 1"><figcaption>Same job, two products. Above, Find &amp; Filter naming every value. Below, the shipped bar counting them instead.</figcaption></figure>
   <figure><img class="zoomable" src="../assets/filters/create-view.png" alt="The Create New View modal with a filter view name field and a set as default view toggle switched on"><figcaption>Default is a property of any view, set with one toggle, not a separate kind of view to manage.</figcaption></figure>
 
   <h2>Scope Discipline and Rollout</h2>

@@ -57,10 +57,12 @@
   <h2>Context</h2>
   <p>Every surface had its own filters. The biggest had none. On Records, operators would search spreadsheets for record IDs and paste them into URLs to reach a unit detail page. Where filters existed they were static dropdowns: no multi-select, no overflow handling, no persistence, and every surface did it differently. Leadership's take: "make it work like Ramp."</p>
 
+  <figure class="wide"><img class="zoomable" src="../assets/filters/before-pair.png" alt="Two before states in the old platform: the Turn Requests page with two rows of static dropdown filters, and the Records Units page with only a cascading selector bar and no filters at all"><figcaption>Two surfaces, two answers. Turn Requests had a wall of static dropdowns. Records had nothing, which is why operators pasted record IDs into the URL.</figcaption></figure>
+
   <h2>Attempt one: research said one thing, the room wanted Ramp</h2>
   <p>I ran the initial research with a junior designer: a current-state study of internal operators, pattern exploration across comparable products, and a proposal that was modest, learnable, and shaped around operator mental models and engineering effort.</p>
   <p>The proposal was overruled in favor of the Ramp-style combined field. It shipped only inside the Acquisition Portal, and when that project was shelved, the pattern died with it. The pitfalls we had flagged were real: every click in a multi-select closed the menu, real-time filtering lagged at our volumes, and the mental model was foreign to operators.</p>
-  <!-- figure slot: the Find & Filter pattern live in the Acquisition Portal, 2023 -->
+  <p>One piece of it was worth keeping. The filter pills were my design, and when the problem came back around I brought them with me. Everything else we built and tested fresh.</p>
 
   <h2>Attempt two: the problem came back with leverage</h2>
   <p>Accounts Payable was drowning. More properties under management made the missing filters actively painful, especially reconciliation tied to month-end close: real operational pain, on a clock, every month. The org had also changed. The Head of Design had left, a new PM was willing to own the initiative and advocate for design, and we reported directly to the Head of Product.</p>
@@ -77,6 +79,8 @@
     <li>Filters reset when navigating away, so operators re-applied everything each time they came back.</li>
     <li>Frontline wants one default, managers want many: views are role-shaped, and a default is a property of any view, not a separate special view.</li>
   </ul>
+  <p>A short survey of thirteen operators backed the last one up: a saved default view beat reopening the last applied view, better than half to under four in ten.</p>
+  <figure class="wide"><img class="zoomable" src="../assets/filters/research-pair.png" alt="Interview synthesis notes grouped as observations, requests and frustrations, beside a pie chart of a thirteen response survey showing 53.8 percent for a saved default view and 38.5 percent for the last applied view"><figcaption>What the interviews surfaced, and the survey question that settled how a view should come back to you.</figcaption></figure>
 
   <h2>What Shipped</h2>
   <p>Bills 2.0: filter pills with counts, an all-filters menu, and saved views that stick. The interactions we fixed, deliberately, one by one:</p>
@@ -87,11 +91,16 @@
     <li>Built to scale with the page: counts rather than values in pills, +N overflow, search inside big filters.</li>
     <li>Views that stick: a default auto-applies on login, and any view is shareable by link.</li>
   </ul>
-  <!-- figure slot: before, static dropdowns with no persistence -->
-  <!-- figure slot: after, Bills 2.0 with pills, counts, and a saved view active -->
+  <figure class="wide"><img class="zoomable" src="../assets/filters/after-bills.png" alt="Bills 2.0 with Status and Owner filters applied as blue pills, a showing 112 items count, the All Filters control, and the saved view selector"><figcaption>Bills 2.0: applied filters stay visible as pills, the result count sits up front, and the view selector holds the whole arrangement.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/filters/all-filters-sequence.png" alt="Six states of the All Filters menu as Status and Owner checkboxes are selected, with the Apply button count moving from 1,090 results down to 112"><figcaption>The menu stays open while you work, and Apply shows its consequences: the count updates on the button before you commit to anything.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/filters/pill-edit.png" alt="Bills 2.0 with an applied Status pill expanded in place into a checkbox list showing Not Posted and Posted selected, above an Apply button reading 112 results"><figcaption>An applied filter is a control, not a label. Click the pill and it opens where it sits.</figcaption></figure>
+  <figure><img class="zoomable" src="../assets/filters/create-view.png" alt="The Create New View modal with a filter view name field and a set as default view toggle switched on"><figcaption>Default is a property of any view, set with one toggle, not a separate kind of view to manage.</figcaption></figure>
 
   <h2>Scope Discipline and Rollout</h2>
-  <p>Two late leadership asks arrived: search inside the all-filters menu, and shared admin saved views. The accounting team was willing to build both, wanting the complete solution shaped around accounting operators. Rollout went surface by surface: Bills first for AP reconciliation, then Resident CRM for leasing search and client portfolio filters, then everywhere. Leasing, Applicants, Properties, and Portfolios inherited the same filter and view interactions instead of inventing their own: a compounding win for platform coherence.</p>
+  <p>Two late leadership asks arrived: search inside the all-filters menu, and shared admin saved views. Rather than absorb them and put the release at risk, we sequenced them behind it. The accounting team picked both up once Bills was live, because they wanted the complete solution shaped around their operators.</p>
+  <figure class="wide"><img class="zoomable" src="../assets/filters/filters-menu-search.png" alt="The All Filters menu with a search filter field at the top, beside an Assignee filter opened into a searchable checklist with a select all option"><figcaption>The follow-on the accounting team built: search for the filter, then search inside it. Owners, Vendors and Portfolios were long lists.</figcaption></figure>
+  <p>Rollout went surface by surface: Bills first for AP reconciliation, then Resident CRM for leasing search and client portfolio filters, then everywhere. Leasing, Applicants, Properties, and Portfolios inherited the same filter and view interactions instead of inventing their own: a compounding win for platform coherence.</p>
+  <figure class="wide"><img class="zoomable" src="../assets/filters/filter-bar-states.png" alt="The same filter bar in three states: no filters applied, two applied pills, and seven applied pills with a plus three more overflow control"><figcaption>One bar, every surface, from empty to overflowing. Counts rather than values in the pills is what let it scale.</figcaption></figure>
 
   <h2>Impact, qualified</h2>
   <p>The impact is qualitative, specific, and named. Accounts Payable called out the system for keeping reconciliation, and close, on schedule as volume grew. Operators stopped using browser tabs as a saved-view system. One pattern now runs from Bills to Resident CRM to the rest of Origin without reinvention.</p>
@@ -104,6 +113,8 @@
     <a href="../about.html" style="text-align:right"><span class="lbl">Next →</span>About</a>
   </div>
 </main>
+
+<script src="../assets/lightbox.js" defer></script>
 
 <footer>
   <div class="wrap">

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The resident app, re-architected · Tyler Pruyn</title>
-<meta name="description" content="How a research-led IA redesign turned ButterflyMX's door-opener app into a resident platform. 4.9 on the App Store across 100K+ ratings.">
+<meta name="description" content="How a research-led IA redesign turned ButterflyMX's door-opener app into a resident platform. 4.9 on the App Store across 100,000 ratings.">
 <link rel="preload" href="../assets/fonts/inter-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/newsreader-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/fonts/inter.css">
@@ -14,7 +14,7 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The resident app, re-architected · Tyler Pruyn">
-<meta property="og:description" content="How a research-led IA redesign turned ButterflyMX's door-opener app into a resident platform. 4.9 on the App Store across 100K+ ratings.">
+<meta property="og:description" content="How a research-led IA redesign turned ButterflyMX's door-opener app into a resident platform. 4.9 on the App Store across 100,000 ratings.">
 <meta property="og:image" content="https://taba-nyc.github.io/assets/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -35,11 +35,11 @@
   <div class="wrap">
     <div class="kicker">ButterflyMX · Product Design Director</div>
     <h1>The resident app, re-architected</h1>
-    <p class="lede">ButterflyMX's app did one thing brilliantly: open the door. The business needed it to do much more (amenities, maintenance, payments, building life) but the app was never designed to grow. I made the case for doing it right, won nine weeks for research and a proof of concept, and redesigned the architecture that still structures the app today.</p>
+    <p class="lede">Redesigning our mobile app to support new features and enhance the resident experience. ButterflyMX's app did one thing brilliantly: open the door. The app wasn't originally designed to support additional features outside of access, so I led the research and the proof of concept that gave it an architecture it could grow into.</p>
     <div class="cs-meta">
       <div><b>Role</b>Product Design Director: research plan, IA, testing, UI direction</div>
-      <div><b>Team</b>Design × PM, with engineering consulted throughout</div>
-      <div><b>Timeline</b>9-week proof of concept → phased feature rollout</div>
+      <div><b>Team</b>Design × PM, with engineering brought in once we had a direction</div>
+      <div><b>Timeline</b>Proof of concept → phased feature rollout</div>
       <div><b>Platform</b>iOS · Android</div>
     </div>
   </div>
@@ -48,54 +48,122 @@
 <main class="cs-body wrap">
   <h2>Outcomes</h2>
   <div class="outcomes">
-    <div class="outcome"><b>4.9</b><span>App Store rating across 100K+ ratings (4.7 on Google Play)</span></div>
-    <div class="outcome"><b>Still live</b><span>the IA and navigation from this redesign structure the app today</span></div>
-    <div class="outcome"><b>9 weeks</b><span>won from leadership for research-led discovery, with no pushback</span></div>
-    <div class="outcome"><b>New muscle</b><span>changed how the company valued research and testing</span></div>
+    <div class="outcome"><b>4.9</b><span>app rating on the App Store, across 100,000 ratings</span></div>
+    <div class="outcome"><b>Still live</b><span>the app continues to scale on this architecture, into smart home and smart lock integrations and other verticals and markets</span></div>
+    <div class="outcome"><b>One system</b><span>a cohesive, consistent design system now embedded in all of ButterflyMX's products</span></div>
+    <div class="outcome"><b>Process change</b><span>research and testing became a core part of how product and engineering build</span></div>
   </div>
-  <p>The home-screen swipe-to-open interaction remains the app's core action pattern, and the cohesive system this work produced became embedded across all of ButterflyMX's products as it expanded into smart-home integrations and new verticals.</p>
 
   <a class="proto-cta" href="../prototypes/resident-app/index.html">
     <span>
-      <span class="t">Try the working prototype</span>
+      <span class="t">Try it for yourself</span>
       <span class="s" style="display:block">A coded, swipeable rebuild of the resident app: home, doors, visitors, building, and account. Built by me, in code.</span>
     </span>
     <span class="go">Open prototype →</span>
   </a>
 
   <h2>Context</h2>
-  <p>ButterflyMX connects residents to their buildings: see who's at the door, let them in, manage guest access. The app earned its ratings doing exactly that. But the roadmap wanted amenity reservations, maintenance requests, building notifications, rent payments, and support, and the app's architecture had no room for any of it. Bolting features onto a door-opener would have buried the one interaction people loved.</p>
+  <p>ButterflyMX is an access control technology company for multi-family properties that gives residents the ability to open doors remotely to their building.</p>
+  <p>The resident mobile app was an opportunity to expand our resident app experience beyond just opening doors: amenity reservations, maintenance requests, building notifications, rent payments, and building information and support.</p>
+  <p><strong>The problem.</strong> The app wasn't originally designed to support additional features outside of access.</p>
+  <p><strong>The objectives.</strong> Design the future vision of the app for scale. Validate and introduce the right features for residents at the right time. Deliver a best-in-class UX. Embed the app in day-to-day activities. Elevate the visual design and identity.</p>
 
-  <h2>Winning the time to do it right</h2>
-  <p>ButterflyMX was still new to formal research and discovery. Working closely with my PM, I drafted a plan that made the case to leadership in their terms: validate the direction before engineering commits, or pay for the rework later. Leadership approved nine weeks for a proof of concept, with engineering focused on other priorities, and gave us the room with no pushback. The deeper outcome of this project is that the process stuck.</p>
+  <h2>Research Planning</h2>
+  <p>ButterflyMX was still new to larger, more formal research and discovery processes. I worked closely with our PM to draft a compelling plan to convince leadership of the value and need to validate our direction and concept.</p>
+  <ul>
+    <li><strong>Competitive analysis.</strong> Analyze 8 competitors to understand what kind of experiences exist today for residents.</li>
+    <li><strong>Card sorting exercise.</strong> Hold 6 sessions to determine how people would expect to categorize and group content.</li>
+    <li><strong>App map ideation.</strong> Utilize previous learnings and organize content to determine the best approach for scaling up new offerings.</li>
+    <li><strong>User testing and feedback.</strong> Conduct user testing to capture feedback and validate if the proposed IA makes sense to users.</li>
+    <li><strong>Visual design and app UI.</strong> Elevate the app UX and UI to support key flows and screens required for each feature, both new and existing.</li>
+  </ul>
+  <p>Leadership approved our plan and gave us the time to deliver a proof of concept. Due to limited resources and engineering's focus on larger priorities, we were able to advocate for the time needed to execute this plan with no pushback.</p>
 
-  <h2>Research</h2>
-  <h3>Competitive analysis, 8 products</h3>
-  <p>Every resident-experience app we studied confirmed a few patterns: notifications are the highest-value common feature; the most valuable features connect resident and building through communication; guest access is a top need in secure buildings; and home screens prioritize high-frequency actions. Account sections were remarkably consistent: lease, payments, settings.</p>
-  <h3>Card sorting, 6 sessions</h3>
-  <p>I ran 45-minute card sorts with participants role-playing residents of a modern multifamily building, grouping feature cards into categories that made sense to them. Four themes emerged, in residents' own logic: <em>access I control for myself and others; things I can do in my building; things I need to know about my building; things regarding my profile, payments, and preferences.</em></p>
-  <h3>App map workshop, one off-site</h3>
-  <p>With the card sort themes and the competitive scan in hand, I ran an in-person workshop at a team off-site to draft the app map together. The research was the constraint on the wall: every feature had to live inside one of the four resident themes, and the comparable products showed where residents already carried expectations we should not fight. Working it live with product and engineering in the room settled most of the arguments before they ever reached a doc. The features that kept landing between building and community were the questions we took into testing.</p>
-  <h3>IA testing, 10 participants</h3>
-  <p>Using UserZoom, we tested the proposed architecture with residents of multifamily buildings: where would you expect to find a guest pass, a maintenance request, your lease? Despite some technical hiccups, the majority of tasks passed, and the failures were instructive: access history mattered less than we assumed (nested into Account), arrival notifications mattered more, and a community bulletin board ranked low enough to deprioritize entirely.</p>
-  <figure class="wide"><img class="zoomable" src="../assets/resident-app/home-test.png" alt="De-branded home screen concept used in IA testing, with quick create actions and swipe-to-open"><figcaption>The de-branded concept we tested: quick create, swipe-to-open, and the new four-tab navigation.</figcaption></figure>
+  <h2>Competitive Analysis</h2>
+  <p>We looked at 8 competitors to understand what kind of experiences exist today for residents: which features were most consistent and common, how they organized content, how they prioritized content, and how users navigate features and content in the app.</p>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-07-competitive-matrix.png" alt="Competitive analysis matrix: resident app features listed down the left and eight competitors across the top, with green cells marking which app offers which feature"><figcaption>The competitive matrix: features down the side, 8 competitors across the top, one cell per match.</figcaption></figure>
+  <p><strong>Results.</strong></p>
+  <ul>
+    <li>Notifications are imperative, the most common and high value across all apps.</li>
+    <li>The most common features connect the building and resident through communication channels.</li>
+    <li>Guest access, or "permission to enter," is a top need for more secure buildings that manage visitor access.</li>
+    <li>Home screens show a prioritized list of high frequency and/or high value actions like opening doors, creating guest access, or important notifications.</li>
+    <li>Account sections consistently contain information about the user, their lease, payments, and app settings and preferences.</li>
+  </ul>
+  <figure><img class="zoomable" src="../assets/resident-app/deck-08-feature-priority.png" alt="Table scoring each resident app feature by how many competitors offer it, usage frequency, usage importance and value, with a priority rating from high to low"><figcaption>Every feature scored on how many competitors offer it, how often it gets used, how much it matters, and its value, rolled up to a priority.</figcaption></figure>
+
+  <h2>Card Sorting Exercise</h2>
+  <p>I consulted with our PM to help format the cards to be more contextual to user actions, then ran 45-minute sessions with 6 participants. Each was presented a scenario and asked to group and categorize the cards.</p>
+  <p class="pull">"You are a resident in a large multi-family building. Your rent is a little expensive but the building is modern, clean, and has a lot to offer that meets your needs. You feel safe and secure, and your guests are impressed with the property."</p>
+  <figure class="natural"><img class="zoomable" src="../assets/resident-app/deck-09-card-sort-cards.png" alt="A grid of yellow card sort cards, each naming a resident action such as call the elevator to my floor, pay my rent, make a maintenance request and update my payment method"><figcaption>The cards: one resident action each, written the way a resident would say it.</figcaption></figure>
+
+  <h2>Emerging Themes</h2>
+  <p>Utilizing outcomes from our competitive analysis and card sorting, we began to synthesize our findings, consolidating and reducing our categories through commonality. Four themes emerged, in residents' own words:</p>
+  <ul>
+    <li><strong>Access (residents and guests).</strong> <em>"Access I control for myself and others."</em></li>
+    <li><strong>Building services.</strong> <em>"Things I can do in my building."</em></li>
+    <li><strong>Building updates.</strong> <em>"Things I need to know about my building."</em></li>
+    <li><strong>Account settings.</strong> <em>"Things regarding my profile, app settings, payment details, and preferences."</em></li>
+  </ul>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-10-themes-synthesis.png" alt="Synthesis spreadsheet with card sort results grouped into columns by theme, each column shaded a different color"><figcaption>The synthesis sheet: card sort groupings consolidated by commonality into the four themes.</figcaption></figure>
+
+  <h2>App Map Ideation</h2>
+  <p>During a team off-site, I led a brainstorm exercise with the design team to tackle our app map organization and explore possibilities that we could test for our new navigation. There were still open questions about where certain features might live. Some categories had significant overlap, like building, community, and notifications. The candidate sections on the wall: Home, Guest Access, Building Services, Community, Account, and Notifications.</p>
+  <p>What we landed on went to product first. Product approved it and felt good going forward with testing on the new IA. Engineering was brought into the conversation once we had a direction, to comment on the constraints of the platform, the level of effort, and how we would need to think about changing the app over time. That conversation is where the phased rollout came from.</p>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-11-app-map-workshop-1.jpg" alt="A whiteboard at the off-site covered in yellow sticky notes arranged into columns for the app map"><figcaption>The app map on the wall at the off-site: sticky notes, one candidate section per column.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-11-app-map-workshop-2.jpg" alt="A second whiteboard from the off-site with pink, green and yellow sticky notes grouped under new headings after the brainstorm"><figcaption>After the brainstorm: features regrouped, with the overlaps between building, community and notifications still visible.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-12-ia-old-future.png" alt="Old and future app maps side by side: the old map with Home, Calls, Activity, Visitor Access and Account tabs, and the future map with Home, Building, Visitors, Account and Notifications, new sections marked in pink and existing sections in blue"><figcaption>Old and future. Pink marks a new feature or section, blue marks an existing one.</figcaption></figure>
+
+  <h2>IA Testing</h2>
+  <p>Using the UserZoom platform, we launched an IA user test to gather feedback on our proposed app IA concept, with 10 participants targeting residents in multi-family buildings. We surveyed their current resident experience and building, including their attitudes about the importance of certain features or services, and identified where the participants would expect to find certain features and content, and if the layout and taxonomy made sense to them.</p>
+  <div class="fig-row">
+    <figure class="natural"><img class="zoomable" src="../assets/resident-app/deck-13-ia-test-home.png" alt="De-branded test prototype home screen with open door buttons, a community feed button and a smart home button"><figcaption>The de-branded home screen we tested.</figcaption></figure>
+    <figure class="natural"><img class="zoomable" src="../assets/resident-app/deck-13-ia-test-building.png" alt="De-branded test prototype screen for a building app with quick create actions, swipe to open door controls and a four-tab navigation"><figcaption>Quick create, swipe to open, and the four-tab navigation.</figcaption></figure>
+  </div>
+
+  <h2>Testing Feedback</h2>
+  <p>Despite minor technical challenges, a majority of users understood what the app was for and where to find key features.</p>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-14-testing-feedback.png" alt="Testing results matrix: ten respondents down the side, tasks across the top, each cell colored green for pass, yellow for pass with difficulty or red for fail, with a score per task along the bottom"><figcaption>Every task, every participant. Green is a pass, yellow a pass with difficulty, red a fail.</figcaption></figure>
+
+  <h2>Survey and Testing Results</h2>
+  <p><strong>Attitudes and preferences.</strong></p>
+  <ul>
+    <li>Residents valued having amenities in their building, while community board communications were less important.</li>
+    <li>Residents were not concerned about having a log of historical guest access, but they did care to be notified when a guest arrived or entered.</li>
+    <li>Residents were most interested in being notified of maintenance in the building and package deliveries.</li>
+    <li>Residents expected to be able to customize the app and tailor it to their preferences.</li>
+  </ul>
+  <p><strong>Action items.</strong></p>
+  <ul>
+    <li>Allow more customization and the ability to arrange items on the home screen.</li>
+    <li>Consider quick actions on home for other resident needs.</li>
+    <li>Allow flexibility to take action in multiple ways.</li>
+    <li>Make the notifications bell more prominent.</li>
+    <li>Access history can be nested in the account tab (low priority and necessity).</li>
+    <li>Community bulletin board would be deprioritized and assessed for a future phase.</li>
+  </ul>
 
   <h2>The New Architecture</h2>
-  <p>The old navigation had five tabs (Home, Visitor Access, Account, Calls, Activity), two of which existed only because the system generated calls and events, not because residents thought that way. The new model has four, mapped to the research themes: <strong>Home</strong> for high-frequency actions, <strong>Building</strong> as the new growth surface (doors, contacts, amenities, maintenance), <strong>Visitor Access</strong>, and <strong>Account</strong>. Calls and activity became notifications, where residents expected them.</p>
-  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-17-before-after.png" alt="Before and after: the old resident app home screen with a welcome banner, swipe to open buttons and quick create, beside the redesigned home screen with a building selector, a maintenance notice, shortcuts and a My Access list"><figcaption>Before and after, Home tab. Same job, unlocking a door, but the new screen is organized around what residents do most and leaves room for what comes next.</figcaption></figure>
-  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-18-old-navigation.png" alt="The old app navigation as five screens side by side: Home, Calls, Activity, Visitor Access and Account"><figcaption>The old navigation: five tabs. Calls and Activity were system logs given a tab each, not places residents went on purpose.</figcaption></figure>
-  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-19-new-navigation.png" alt="The new app navigation as four screens side by side: Home, Building, Visitor Access and Account"><figcaption>The new navigation: four tabs mapped to the research themes. Building is the new surface, with amenities, doors, maintenance and contacts under one roof.</figcaption></figure>
-  <figure class="wide"><img class="zoomable" src="../assets/resident-app/evolution-at-a-glance.png" alt="Mobile UX evolution at a glance: how each tab evolves over time with legacy, updated, new, and evolved screens"><figcaption>The scaling plan: each tab's evolution mapped over time, so features land in the right place instead of wherever fits.</figcaption></figure>
-  <p>The point of the Building tab wasn't the features it launched with; it was the ones it could absorb later without another re-architecture. The service blueprint below maps how a maintenance request flows across resident, app, staff, and systems, the kind of artifact that kept new features landing coherently.</p>
-  <figure class="wide"><img class="zoomable" src="../assets/resident-app/service-blueprint.png" alt="Maintenance request service blueprint across resident, app, building staff, and backend systems"><figcaption>Maintenance request service blueprint: the Building tab's features were designed as services, not screens.</figcaption></figure>
+  <p>The old navigation had five tabs: Home, Calls, Activity, Visitor Access, and Account. The new one has four: Home, Building, Visitor Access, and Account, with Building as the new surface for services and notifications where residents expected them.</p>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-17-before-after.png" alt="Before and after: the old resident app home screen with a welcome banner, swipe to open buttons and quick create, beside the redesigned home screen with a building selector, a maintenance notice, shortcuts and a My Access list"><figcaption>Before and after, Home tab.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-18-old-navigation.png" alt="The old app navigation as five screens side by side: Home, Calls, Activity, Visitor Access and Account"><figcaption>The old navigation: Home, Calls, Activity, Visitor Access, Account.</figcaption></figure>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-19-new-navigation.png" alt="The new app navigation as four screens side by side: Home, Building, Visitor Access and Account"><figcaption>The new navigation: Home, Building, Visitor Access, Account.</figcaption></figure>
+  <h3>The rollout plan</h3>
+  <p>We weren't going to do everything at once. With engineering's read on constraints and level of effort, we phased the work: the highest priority changes first, the ones we needed in order to scale up the identity, the visuals, and the architecture of the app over time. Each new feature had a place to nest as it landed, so the app could evolve slowly without another re-architecture.</p>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/evolution-at-a-glance.png" alt="Mobile UX evolution at a glance: how each tab evolves over time with legacy, updated, new, and evolved screens"><figcaption>Mobile UX evolution at a glance: each tab's phases, from legacy to updated to new to evolved.</figcaption></figure>
+  <h3>Building tab: amenity reservations</h3>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-20-amenity-reservations.png" alt="Five screens of the Building tab amenity reservations flow: the building menu, the amenity list, an amenity detail for the rooftop lounge, the reservation list and a reservation detail"><figcaption>Amenity list and detail screen, reservation list and detail screen.</figcaption></figure>
+  <h3>Account section</h3>
+  <figure class="wide"><img class="zoomable" src="../assets/resident-app/deck-21-account-section.png" alt="Four screens of the Account section: the account menu, My Profile, access activity and payment methods"><figcaption>Account, My Profile, Activity, and Payment Methods.</figcaption></figure>
 
-  <h2>What Shipped</h2>
-  <p>The redesigned app rolled out with the new navigation, an elevated visual system, and the first Building-tab features, with amenity reservations leading. Quick actions and customization landed on Home, where research said residents wanted control.</p>
-  <figure class="wide"><img class="zoomable" src="../assets/resident-app/app-hero.png" alt="ButterflyMX resident app: splash screen and home screen with shortcuts and door controls"><figcaption>The shipped app: shortcuts, doors, and the patterns residents already trusted, now with room to grow.</figcaption></figure>
-  <figure><img class="zoomable" src="../assets/resident-app/amenities.png" alt="Amenities screen with rooftop lounge, key locker, and gym listings"><figcaption>Amenity reservations: the first proof that the Building tab could carry new business lines.</figcaption></figure>
-
-  <h2>Reflection</h2>
-  <p>The architecture outlived my tenure, which is the outcome I value most. The IA and navigation still structure the live app, the swipe-to-open pattern is still the signature interaction, and the app kept its ratings while becoming a platform. The quieter legacy: this was the project that taught the company what research buys, and the discovery process it introduced became how product work got done.</p>
+  <h2>Impact &amp; Outcomes</h2>
+  <p>As of today:</p>
+  <ul>
+    <li>The app went live and currently has a 4.9 rating on the App Store across 100,000 ratings.</li>
+    <li>This redesign changed the way the company values user research and testing and laid the initial groundwork for the future resident feature updates and beyond.</li>
+    <li>The app continues to scale, allowing the business to partner with smart home and smart lock integration companies, as well as expand into other verticals, technology, and markets.</li>
+    <li>The app redesign and the time afforded allowed us to design a cohesive and consistent system that has been embedded in all of ButterflyMX's products, making it stand out among competitors in both its identity and as an industry leader.</li>
+  </ul>
 
   <div class="next-prev">
     <a href="access-management.html"><span class="lbl">← Previous</span>Access management for 6,500 buildings</a>

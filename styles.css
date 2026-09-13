@@ -141,9 +141,11 @@ footer a{color:var(--ink)}
 .cs-lb.open{display:block}
 .cs-lb img{display:block;margin:0 auto;background:var(--color-neutral-0);border-radius:var(--radius-sm);padding:var(--space-16);max-width:none;height:auto;cursor:zoom-in}
 .cs-lb.zoom img{cursor:zoom-out}
-.cs-lb button{position:fixed;color:var(--color-neutral-50);background:none;border:none;cursor:pointer;opacity:.8;font-size:var(--font-size-32);line-height:1}
-.cs-lb button:hover{opacity:1}
+/* Controls sit on a dark pill so they stay visible when a zoomed image's white
+   ground fills the viewport behind them. */
+.cs-lb button{position:fixed;color:var(--color-neutral-50);background:color-mix(in srgb,var(--color-neutral-950) 72%,transparent);border:1px solid color-mix(in srgb,var(--color-neutral-50) 18%,transparent);border-radius:var(--radius-full);width:44px;height:44px;display:grid;place-items:center;padding:0;cursor:pointer;opacity:.92;font-size:var(--font-size-24);line-height:1;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:1}
+.cs-lb button:hover{opacity:1;background:var(--color-neutral-950)}
 .cs-lb .close{top:var(--space-16);right:var(--space-24)}
-.cs-lb .nav{top:50%;transform:translateY(-50%);font-size:var(--font-size-40);padding:var(--space-12)}
+.cs-lb .nav{top:50%;transform:translateY(-50%);font-size:var(--font-size-32)}
 .cs-lb .prev{left:var(--space-12)}
 .cs-lb .next{right:var(--space-12)}

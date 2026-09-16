@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="clay-dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consolidating three design systems · Tyler Pruyn</title>
+<meta name="description" content="Darwin Homes ran on Ant Design, Tailwind, and Bricks at once. Moving the platform from roughly a fifth on a shared system to about 70 percent, screen by screen, while the org shrank.">
+<link rel="preload" href="../assets/fonts/inter-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/newsreader-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/fonts/inter.css">
+<link rel="stylesheet" href="../assets/fonts/newsreader.css">
+<link rel="stylesheet" href="../clay.css">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Consolidating three design systems · Tyler Pruyn">
+<meta property="og:description" content="Darwin Homes ran on Ant Design, Tailwind, and Bricks at once. Moving the platform from roughly a fifth on a shared system to about 70 percent, screen by screen, while the org shrank.">
+<meta property="og:image" content="https://taba-nyc.github.io/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="../index.html">Tyler Pruyn</a>
+    <span class="links">
+      <a href="../index.html" class="active">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../art.html">Art</a>
+      <a href="../resume.html">Resume</a>
+    </span>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <div class="kicker">Darwin Homes · Lead Product Designer, then Head of Design</div>
+    <h1>Consolidating three design systems</h1>
+    <p class="lede">Darwin's platform ran on Ant Design, Tailwind, and Bricks at the same time. Most screens were custom one-offs built to look like the system without being built from it, so changing something in one place changed nothing anywhere else. I moved the platform from somewhere between 12 and 25 percent on a shared system to about 70 percent, screen by screen, across a stretch where the company ran nine to twelve rounds of cuts and the design team went from five people to two.</p>
+    <div class="cs-meta">
+      <div><b>Role</b>Design direction and the quality bar. Audit, component rebuilds, migration sequencing, negotiating scope with engineering</div>
+      <div><b>Team</b>Two designers at most, one by the time I was promoted. Partnered with the engineering lead who owned migration appetite</div>
+      <div><b>Timeline</b>September 2022 to April 2025</div>
+      <div><b>Platform</b>B2B web, single-family rental operations at institutional scale</div>
+    </div>
+  </div>
+</header>
+
+<main class="cs-body wrap">
+  <h2>Outcomes</h2>
+  <div class="outcomes">
+    <div class="outcome"><b>~70%</b><span>of the platform on a shared system, up from 12 to 25 percent</span></div>
+    <div class="outcome"><b>3 → 1</b><span>UI systems, consolidated onto Bricks</span></div>
+    <div class="outcome"><b>6-8 mo</b><span>running the design function before I had the title</span></div>
+    <div class="outcome"><b>9-12</b><span>rounds of company cuts the function stayed intact through</span></div>
+  </div>
+  <p>It did not finish. The migration was opportunistic by design, negotiated with the engineering lead project by project, and there were still surfaces on the old stack when I left in April 2025. Seventy percent is what I can defend, not a completion claim.</p>
+
+  <figure class="wide"><img class="zoomable" src="../assets/design-system-consolidation/migration.webp" alt="Progress bars comparing roughly 12 to 25 percent of the platform on a shared design system in September 2022 against about 70 percent in April 2025"><figcaption>The one number I have that measures the design function rather than a product. Progress, not completion.</figcaption></figure>
+
+  <h2>The problem, stated properly</h2>
+  <p>I noticed the three systems on arrival. Ant Design, Tailwind, and Bricks, which was ours. That alone is survivable. The real problem was underneath it.</p>
+  <p>Most screens were custom one-offs. They had been built to resemble the system rather than assembled from it, so they did not share a common design language even where they looked like they did. Fonts and font sizes inside buttons varied. Button sizes, paddings, and weights varied. The entire point of a system is that you change something in one place and it cascades. Ours did not cascade. It just looked like it had.</p>
+  <p>Bricks had robust foundations and a thin component set that did not account for the interactions the platform actually needed, so I broke components and rebuilt them. One library we had started updating had never been pressure tested against responsiveness or the multi-select behavior we needed.</p>
+
+  <h2>Doing the job before the title</h2>
+  <p>I was running the design function for six to eight months of 2024 before I was made Head of Design. My manager had left, and the work did not stop.</p>
+  <p>Inside six months of 2023 the design team had gone from five to two. Three designers, including the head of design, left or were let go. For months after that, design reported to someone who did not understand it and would disagree with us on fundamentals or change the subject. What I did in that window was ordinary management without the authority for it: one to ones with the junior designer, advice, feedback, and cover. They wanted that, and nobody was going to provide it otherwise.</p>
+  <p>When leadership decided to add a designer, I built the interview process and the checks that went with it, then helped identify the candidate. A dynamic formed above us that positioned the two of us as rivals. I decided not to play it. I brought him into the filters research, gave him real ownership, and was straight with him when the dynamic became visible. We became close collaborators, and his respect came from watching me advocate for design and help him navigate the egos and the hierarchy rather than from anything I could claim on an org chart.</p>
+  <p>I was promoted to Head of Design with one condition attached: the team went back to two. The senior designer was let go without my involvement, in a round that cut or reduced many departments. By the time the title arrived I had one report. In hindsight the consolidation to a small core was always the plan, and design was not on the protected list.</p>
+
+  <h2>How the migration actually worked</h2>
+  <p>You cannot redesign everything at once, so you upgrade pages as the opportunity arises. Every migration was a negotiation with the engineering lead about appetite, attached to a project that was already funded.</p>
+  <p>The filters and saved views pattern was the biggest lift, and it did double duty. Standardizing how the platform finds its data also gave us the reason to touch the Ant Design screens, where the visible damage was concentrated in dropdowns and in how badly choice selection behaved. Tailwind surfaces looked closer to right, but the same problems showed up in the same places.</p>
+  <p>The test I used for whether a migration counted: when we implemented Bricks on a page, the whole page moved onto the system. Not a page custom mapped to look like the system. If it did not cascade afterward, it had not moved.</p>
+
+  <h2>What I would tell you about it</h2>
+  <p>The number I care about is 12 to 25 percent going to about 70. Not because 70 is good, but because it is the only number I have that measures the design function rather than a product. Every other figure I can give you about Darwin measures the business.</p>
+  <p>What I would do differently is catch it earlier. Three systems coexisted as long as they did because each squad was optimizing locally and nobody was accountable for the whole. Once I had the function, I treated inconsistency as a compounding debt instead of a housekeeping task, and that is the part I would start on day one rather than year two.</p>
+
+  <div class="next-prev">
+    <a href="ai-assistants.html"><span class="lbl">← Previous</span>Building the AI assistant platform</a>
+    <a href="filters.html" style="text-align:right"><span class="lbl">Next →</span>Improving navigation: filters &amp; saved views</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Owasco, NY · Open to remote</span>
+    <span><a href="mailto:tpruyn@gmail.com">tpruyn@gmail.com</a> · <a href="https://www.linkedin.com/in/tpruyn/">LinkedIn</a> · <a href="http://instagram.com/tpeverything">Instagram</a></span>
+  </div>
+</footer>
+<script src="../assets/nav.js" defer></script>
+</body>
+</html>

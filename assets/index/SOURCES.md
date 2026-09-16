@@ -13,7 +13,20 @@ acceptable here, they read as a presentation rather than as work.
 | intercom | intercom/after-home.png | Center, 16:9 |
 | access-management | access-management/screen-1.webp | North, 1440x810 |
 | resident-app | resident-app/deck-20-amenity-reservations.png | 2000x955+0+170 to drop the slide title, then centre 16:9 |
-| filters | filters/findfilter-menu.png | NorthWest, 16:9 |
+| filters | filters/pill-edit.png | North, 1440x810 |
+
+## Corrected 2026-09-16
+The filters tile was `findfilter-menu.png`, which sits under "Attempt one" in the case
+study: the pattern that got overruled. Showing a rejected direction as the face of the
+case was wrong. Replaced with `pill-edit.png`, the shipped Bills 2.0 screen with an
+applied pill opened in place, chosen by Tyler.
+
+Rule this establishes: an index tile must come from a shipped or after state. Check the
+figure's section in the case study before using it. `access-management` still uses
+`screen-1.webp`, which is "Direction A" from the A/B test and was NOT the chosen
+direction. That one is still open pending Tyler's call between `screen-2` (the chosen
+direction, one clean screen) and `screen-3` (captioned "the shipped experience", but a
+three-screen composite on a coloured ground).
 
 ## Wants a Figma re-export
 Three frames are the best available crop of a flattened deck slide rather than a clean

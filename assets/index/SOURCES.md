@@ -35,6 +35,27 @@ direction. That one is still open pending Tyler's call between `screen-2` (the c
 direction, one clean screen) and `screen-3` (captioned "the shipped experience", but a
 three-screen composite on a coloured ground).
 
+## Tile rule, set 2026-09-16
+Tyler's note: tiles must show the whole screen with nothing cropped, and must carry no white
+ground or edge that is not part of the screen, which read wrong on the dark screenshots.
+
+So every tile is now built the same way: take the whole screen, fit it inside 1600x900, and pad
+to 16:9 with the page ground #221F1B. Nothing is ever cropped, and the padding is invisible
+against the page. `.rowmedia` lost its 1px border and its sunken background for the same
+reason, and the hover border-colour rule went with them; hover is carried by the title colour
+and the image opacity lift.
+
+Two grounds had to be keyed out rather than cropped away, because the screens have rounded
+corners and soft shadows that no inset can clear:
+- access-management: the composite's teal slide ground, flood-filled from the four corners.
+- resident-app: the slide's white ground behind the phones, flood-filled the same way.
+Flood fill from the corners is the right tool here: it only touches the connected background
+region, so whites inside the screens themselves are untouched. A plain colour-replace would
+have eaten them.
+
+Also corrected: the access-management crop was 664x348 and clipped the Actions column. The
+screen's real bounds in the composite are 719x378+71+34, measured, not eyeballed.
+
 ## Figma access, tested 2026-09-16
 The Figma MCP works and is authenticated as Tyler. Node reads and renders succeed, verified
 against `RooatE0eatuWYx9jFxAMX5` node `1363:431` ("Permission Groups page - final", 1920x779,

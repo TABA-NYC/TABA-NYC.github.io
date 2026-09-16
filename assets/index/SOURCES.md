@@ -11,9 +11,16 @@ acceptable here, they read as a presentation rather than as work.
 | ai-assistants | ai-assistants/builder-overview.png | 1180x664+0+0, anchored left to hold back the stock illustration |
 | renewals | renewals/renewal-dashboard.png | North, 1440x810 |
 | intercom | intercom/after-home.png | Center, 16:9 |
-| access-management | access-management/screen-1.webp | North, 1440x810 |
+| access-management | access-management/screen-3.webp, groups-list region | 619x348+80+40, the shipped list |
 | resident-app | resident-app/deck-20-amenity-reservations.png | 2000x955+0+170 to drop the slide title, then centre 16:9 |
 | filters | filters/pill-edit.png | North, 1440x810 |
+
+## Parked 2026-09-16
+The two leadership case studies, "Building the design function" (ButterflyMX) and
+"Consolidating three design systems" (Darwin), were removed at Tyler's request. They did
+not sit right in the hierarchy. Not deleted: everything is intact at commit 346a6a8, and
+the full copy is in the project doc `claude/Squarespace_CaseStudy_Copy_Leadership_Sep16.md`.
+To restore: `git checkout 346a6a8 -- work/design-function.html work/design-system-consolidation.html assets/design-function assets/design-system-consolidation assets/index/design-function.webp assets/index/design-system-consolidation.webp`
 
 ## Corrected 2026-09-16
 The filters tile was `findfilter-menu.png`, which sits under "Attempt one" in the case

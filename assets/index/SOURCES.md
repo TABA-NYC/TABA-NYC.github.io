@@ -35,6 +35,25 @@ direction. That one is still open pending Tyler's call between `screen-2` (the c
 direction, one clean screen) and `screen-3` (captioned "the shipped experience", but a
 three-screen composite on a coloured ground).
 
+## Figma access, tested 2026-09-16
+The Figma MCP works and is authenticated as Tyler. Node reads and renders succeed, verified
+against `RooatE0eatuWYx9jFxAMX5` node `1363:431` ("Permission Groups page - final", 1920x779,
+clean).
+
+**But assets cannot be pulled.** Figma serves exports as short-lived URLs on www.figma.com, and
+that host is blocked by the egress proxy in BOTH the cloud container and the device VM
+(connect_rejected / http_code 000). `download_assets` and the `image_url` from `get_screenshot`
+are therefore unusable. `enableBase64Response` returns the image for viewing only; at 2x a real
+asset would cost six figures of tokens to pass through as text.
+
+So the working split is: Claude can open any file, find frames, read their structure and check
+them visually, and name exactly what to export. Tyler does the export. Do not spend another
+session trying to make the download work.
+
+Also noted: page enumeration is unreliable on these files. `get_metadata` with no nodeId
+returned only the Cover page for both files, even though `1363:431` exists and renders. Node
+ids from a URL work; browsing from the top does not. Ask for node-specific links.
+
 ## Annotation cleanup 2026-09-16
 `after-comms.png` carried a 1px magenta guide line down column 633, and
 `after-detail-overview.png` carried one across row 198. Both were Figma annotation

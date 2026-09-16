@@ -49,8 +49,31 @@ entry says that is never a session's call:
 - **Cutting the Art page** from 52 images to about 12. Same rule.
 - **The two leadership case studies.** Blocked on fact gaps, see below.
 
-## Blocked: the leadership case studies
-Two fact inventories were built from the project docs. The stories are well sourced; the
-*function* evidence a Head of Design case study needs mostly is not. Open questions are in the
-project doc `claude/Leadership_CaseStudy_Gaps_Sep13.md`. Nothing should be drafted past those
-points: the repo rule is that case study copy comes from the deck or Tyler's own words.
+## The leadership case studies (unblocked Sept 16, shipped in 01a8d80)
+Tyler answered the eight blocking questions on Sept 16. Both case studies are written and live on
+this branch. Every claim traces to those answers or to a resume line.
+
+Sensitive handling applied, per the standing rule in `claude/Mark43_CaseStudy_Night_Status.md`:
+the former manager is not named, the reason for their departure is not mentioned anywhere, and
+the rivalry is told in Tyler's own approved phrasing. He also said he was RIF'd himself; that is
+not on the site.
+
+Numbers established by his answers, now usable elsewhere:
+- ButterflyMX: he managed 3. Darwin: 2, and 1 by the time the title arrived. That resolves the
+  "2 vs 3 designers" conflict two SecurityScorecard interviewers recorded on Aug 27. Both are
+  true, different companies.
+- Darwin design system: 12 to 25 percent on a shared system on arrival, about 70 percent on
+  leaving. This is the only number in the whole record that measures the design function rather
+  than a product.
+- Darwin ran 9 to 12 rounds of cuts. The design team went 5 to 2 inside six months of 2023.
+
+## Still open
+- **Nine case studies is over the benchmark** (3 to 6 is the band; he had 7). Retiring two is a
+  deletion decision and therefore his. Access management and renewals are the weakest candidates
+  on outcome specificity, not on quality.
+- **Tiering** and the **Art page cut** are still proposed, not done, for the same reason.
+- **The two-site question.** On Sept 14 a Monarch case study was built on the Squarespace site at
+  tabanyc.com (still disabled). That is the opposite direction from the audit's recommendation to
+  redirect that domain here. Which site is the keeper needs deciding before more copy is written
+  twice.
+- **No photograph on the About page.**

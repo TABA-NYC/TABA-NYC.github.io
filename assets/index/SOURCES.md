@@ -12,7 +12,7 @@ acceptable here, they read as a presentation rather than as work.
 | renewals | renewals/renewal-dashboard.png | North, 1440x810 |
 | intercom | intercom/after-home.png | Center, 16:9 |
 | access-management | access-management/screen-3.webp, groups-list region | 619x348+80+40, the shipped list |
-| resident-app | resident-app/deck-20-amenity-reservations.png | 2000x955+0+170 to drop the slide title, then centre 16:9 |
+| resident-app | resident-app/deck-17-before-after.png | 960x890+182+176, phones lifted onto a white 16:9 ground |
 | filters | filters/pill-edit.png | North, 1440x810 |
 
 ## Parked 2026-09-16
@@ -34,6 +34,21 @@ figure's section in the case study before using it. `access-management` still us
 direction. That one is still open pending Tyler's call between `screen-2` (the chosen
 direction, one clean screen) and `screen-3` (captioned "the shipped experience", but a
 three-screen composite on a coloured ground).
+
+## Annotation cleanup 2026-09-16
+`after-comms.png` carried a 1px magenta guide line down column 633, and
+`after-detail-overview.png` carried one across row 198. Both were Figma annotation
+layers left in the export. Removed per-pixel: only pixels measurably more magenta than
+their perpendicular neighbours were replaced, interpolated from clean pixels either
+side, so no real content was touched. A first attempt that replaced whole rows smeared
+the tab labels and the sidebar headings; do not do that.
+
+Still not fixed, and not fixable without the Figma source:
+- `after-comms.png` shows the compose sheet over a dimmed activity log, and the text
+  under that scrim was rendered at low opacity in the mock. It reads as a blurry
+  screenshot rather than an intentional modal state.
+- `activity-feed-expanded.png` is 803x1284, the smallest export on the page.
+- The Darwin source file for these screens is not in this repo.
 
 ## Wants a Figma re-export
 Three frames are the best available crop of a flattened deck slide rather than a clean

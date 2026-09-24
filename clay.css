@@ -1,5 +1,6 @@
 /* CLAY design tokens v1.5.0 — generated 2026-08-18 from Figma file ojW2B3PLp292xSbGjgGOFb (CLAY Super Library), exported via Figma Variables API */
 /* GENERATED FILE. Edit clay.tokens.json (or better, the Figma variables) and re-run build.py. */
+/* 2026-09-23 hand edit: lime primitives added and clay-dark accent remapped to lime. Port to the CLAY Figma variables before the next export or this is lost. */
 
 :root {
   --color-neutral-0: #FFFFFF;
@@ -35,6 +36,12 @@
   --color-clay-700: #82381E;
   --color-clay-800: #5E2814;
   --color-clay-900: #3B190C;
+  --color-lime-200: #DDFA6E;
+  --color-lime-300: #C9F22E;
+  --color-lime-500: #A3CC00;
+  --color-lime-600: #8AAD00;
+  --color-lime-700: #6B8600;
+  --color-lime-800: #37460D;
   --color-success-50: #E9F8F0;
   --color-success-100: #C4E7DB;
   --color-success-500: #1C9C7E;
@@ -266,9 +273,9 @@
   --bg-surface-default: var(--color-neutral-900);
   --bg-surface-sunken: var(--color-neutral-950);
   --bg-surface-raised: var(--color-neutral-800);
-  --bg-action-primary-default: var(--color-clay-500);
-  --bg-action-primary-hover: var(--color-clay-600);
-  --bg-action-primary-pressed: var(--color-clay-700);
+  --bg-action-primary-default: var(--color-lime-500);
+  --bg-action-primary-hover: var(--color-lime-600);
+  --bg-action-primary-pressed: var(--color-lime-700);
   --bg-action-primary-disabled: var(--color-neutral-700);
   --bg-action-secondary-default: var(--color-neutral-800);
   --bg-action-secondary-hover: var(--color-neutral-700);
@@ -283,7 +290,7 @@
   --bg-action-success-pressed: var(--color-success-800);
   --bg-action-disabled: var(--color-neutral-700);
   --bg-control-track-off: var(--color-neutral-600);
-  --bg-selection-subtle: var(--color-clay-800);
+  --bg-selection-subtle: var(--color-lime-800);
   --bg-feedback-success: #11604E33;
   --bg-feedback-warning: #87591633;
   --bg-feedback-danger: #8A252133;
@@ -294,8 +301,8 @@
   --text-placeholder: var(--color-neutral-400);
   --text-disabled: var(--color-neutral-600);
   --text-on-action: var(--color-neutral-0);
-  --text-link: var(--color-clay-300);
-  --text-link-hover: var(--color-clay-200);
+  --text-link: var(--color-lime-300);
+  --text-link-hover: var(--color-lime-200);
   --text-feedback-success: var(--color-success-100);
   --text-feedback-warning: var(--color-warning-100);
   --text-feedback-danger: var(--color-danger-100);
@@ -303,12 +310,12 @@
   --border-default: var(--color-neutral-700);
   --border-strong: var(--color-neutral-600);
   --border-input: var(--color-neutral-500);
-  --border-focus: var(--color-clay-300);
+  --border-focus: var(--color-lime-300);
   --border-error: var(--color-danger-500);
   --icon-default: var(--color-neutral-400);
-  --icon-active: var(--color-clay-300);
+  --icon-active: var(--color-lime-300);
   --icon-on-action: var(--color-neutral-0);
-  --focus-ring: #E2947859;
+  --focus-ring: #C9F22E59;
 }
 
 :root, [data-density="comfortable"] {
